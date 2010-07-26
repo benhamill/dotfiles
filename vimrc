@@ -18,11 +18,19 @@ set wildmenu
 nmap <silent> ,ev :e $MYVIMRC<cr>
 nmap <silent> ,sv :so $MYVIMRC<cr>
 
-" Add a line below this one and set to insert on this line.
-nmap <silent> ,il o<esc>ki
+" Text editor mode: Split verticle and set winwidth to 85. For use when maximized.
+nmap <silent> ,tm :set textwidth=80<cr>
 
-" Jump back to the first non-blank character in this line.
-nmap <silent> ,b 0w
+
+" Map ctrl-t to the command-t plugin command.
+nmap <silent> <C-t> <Leader>t
+
+" Map ctrl-n and ctrl-p to :cn and :cp respectively.
+nmap <silent> <C-n> :cn<cr>
+nmap <silent> <C-p> :cp<cr>
+
+" Git Blame on Selection.
+vmap <Leader>b :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
 
 set guioptions-=T
 set background=dark
@@ -31,6 +39,7 @@ set number
 set lines=50 columns=100
 set nowrap
 set linebreak
+set winwidth=85
 
 function! Tabstyle_spaces()
   " Use 2 spaces
@@ -46,3 +55,6 @@ set si
 set ai
 set cpoptions+=$
 
+set tags=./tags;
+
+set grepprg=ack
