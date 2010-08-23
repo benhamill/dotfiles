@@ -4,6 +4,16 @@ filetype on
 filetype plugin on
 filetype indent on
 
+" Highlight whitespace
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=darkgray guibg=#333333
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+
+" And trim it on command
+nmap <silent> <C-S-w> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+
 syntax on
 
 set hidden
@@ -14,13 +24,15 @@ set showmode
 
 set wildmenu
 
-" Macros to edit this file and then to source it.
+" Macros to edit this file and then to source it
 nmap <silent> ,ev :e $MYVIMRC<cr>
 nmap <silent> ,sv :so $MYVIMRC<cr>
 
-" Text editor mode: Split verticle and set winwidth to 85. For use when maximized.
-nmap <silent> ,tm :set textwidth=80<cr>
+" Text editor mode
+autocmd BufWinEnter *.txt set textwidth=80
 
+" Quick access for NERDTree
+nmap <silent> ,nt :NERDTreeToggle<cr>
 
 " Map ctrl-t to the command-t plugin command.
 nmap <silent> <C-t> <Leader>t
@@ -36,7 +48,7 @@ set guioptions-=T
 set background=dark
 colorscheme ir_black
 set number
-set lines=50 columns=100
+" set lines=50 columns=100
 set nowrap
 set linebreak
 set winwidth=85
