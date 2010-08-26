@@ -12,7 +12,8 @@ autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
 " And trim it on command
-nmap <silent> <C-S-w> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+command! TW :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s
+
 
 syntax on
 
