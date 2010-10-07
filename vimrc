@@ -14,6 +14,8 @@ autocmd BufWinLeave * call clearmatches()
 " And trim it on command
 command! TW :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s
 
+" Next buffer and close old one.
+command! BD :bn<bar>:bd#
 
 syntax on
 
@@ -41,6 +43,10 @@ nmap <silent> <C-t> <Leader>t
 " Map ctrl-n and ctrl-p to :cn and :cp respectively.
 nmap <silent> <C-n> :cn<cr>
 nmap <silent> <C-p> :cp<cr>
+
+" Map tab and shift-tab to switch buffers.
+nmap <silent> <tab> :bn<cr>
+nmap <silent> <S-tab> :bp<cr>
 
 " Git Blame on Selection.
 vmap <Leader>b :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
