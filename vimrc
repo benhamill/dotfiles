@@ -15,7 +15,7 @@ autocmd BufWinLeave * call clearmatches()
 command! TW :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s
 
 " Next buffer and close old one.
-command! BD :bn<bar>:bd#
+command! BD :bp<bar>:bd#
 
 syntax on
 
@@ -76,4 +76,6 @@ set cpoptions+=$
 
 set tags=./tags;
 
-set grepprg=ack
+set grepprg=ack-grep
+
+let g:CommandTMaxFiles=30000
