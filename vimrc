@@ -7,6 +7,8 @@ filetype on
 filetype plugin on
 filetype indent on
 
+runtime macros/matchit.vim
+
 " Highlight whitespace
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=darkgray guibg=#333333
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
