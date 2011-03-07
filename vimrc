@@ -16,6 +16,11 @@ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
+" Highlight tabs
+autocmd ColorScheme * highlight Tabs ctermbg=darkred guibg=#440000
+autocmd BufWinEnter * match Tabs /\t\+/
+autocmd BufWinLeave * call clearmatches()
+
 " And trim it on command
 command! TW :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s
 
