@@ -19,6 +19,8 @@ autocmd BufWinLeave * call clearmatches()
 " Highlight tabs
 autocmd ColorScheme * highlight Tabs ctermbg=darkred guibg=#440000
 autocmd BufWinEnter * match Tabs /\t\+/
+autocmd InsertEnter * match Tabs /\t\+/
+autocmd InsertLeave * match Tabs /\t\+/
 autocmd BufWinLeave * call clearmatches()
 
 " And trim it on command
