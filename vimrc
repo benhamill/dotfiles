@@ -7,6 +7,10 @@ filetype on
 filetype plugin on
 filetype indent on
 
+augroup filetypedetect 
+  au BufNewFile,BufRead *.pig set filetype=pig syntax=pig 
+augroup END
+
 runtime macros/matchit.vim
 
 " Highlight whitespace
@@ -17,11 +21,11 @@ autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
 " Highlight tabs
-autocmd ColorScheme * highlight Tabs ctermbg=darkred guibg=#440000
-autocmd BufWinEnter * match Tabs /\t\+/
-autocmd InsertEnter * match Tabs /\t\+/
-autocmd InsertLeave * match Tabs /\t\+/
-autocmd BufWinLeave * call clearmatches()
+" autocmd ColorScheme * highlight Tabs ctermbg=darkred guibg=#440000
+" autocmd BufWinEnter * match Tabs /\t\+/
+" autocmd InsertEnter * match Tabs /\t\+/
+" autocmd InsertLeave * match Tabs /\t\+/
+" autocmd BufWinLeave * call clearmatches()
 
 " And trim it on command
 command! TW :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s
