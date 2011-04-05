@@ -1,11 +1,12 @@
 set nocompatible
 
+filetype off
+
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
-filetype on
-filetype plugin on
-filetype indent on
+syntax on
+filetype plugin indent on
 
 augroup filetypedetect 
   au BufNewFile,BufRead *.pig set filetype=pig syntax=pig 
@@ -32,8 +33,6 @@ command! TW :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s
 
 " Next buffer and close old one.
 command! BD :bp<bar>:bd#
-
-syntax on
 
 set hidden
 
