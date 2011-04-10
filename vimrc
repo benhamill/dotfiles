@@ -12,6 +12,8 @@ augroup filetypedetect
   au BufNewFile,BufRead *.pig set filetype=pig syntax=pig 
 augroup END
 
+set t_Co=256
+
 runtime macros/matchit.vim
 
 " Highlight whitespace
