@@ -70,7 +70,7 @@ vmap <Leader>b :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'
 
 set guioptions-=T
 set background=dark
-colorscheme molokai
+colorscheme solarized
 set number
 " set lines=50 columns=100
 set nowrap
