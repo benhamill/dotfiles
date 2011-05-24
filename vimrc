@@ -93,6 +93,4 @@ set cpoptions+=$
 
 set tags=./tags;
 
-set grepprg=ack
-
 let g:CommandTMaxFiles=30000
