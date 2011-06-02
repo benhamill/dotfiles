@@ -77,6 +77,9 @@ set nowrap
 set linebreak
 set winwidth=85
 
+set laststatus=2
+set statusline=%f%(\ %M%)%(\ %R%)%(\ %W%)%(\ %y%)%=%-14.(%l,%c%V%)\ %P
+
 function! Tabstyle_spaces()
   " Use 2 spaces
   set softtabstop=2
