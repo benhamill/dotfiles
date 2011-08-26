@@ -8,8 +8,8 @@ call pathogen#helptags()
 syntax on
 filetype plugin indent on
 
-augroup filetypedetect 
-  au BufNewFile,BufRead *.pig set filetype=pig syntax=pig 
+augroup filetypedetect
+  au BufNewFile,BufRead *.pig set filetype=pig syntax=pig
 augroup END
 
 set t_Co=256
@@ -44,6 +44,8 @@ set showmode
 
 set wildmenu
 
+set autoread
+
 " Macros to edit this file and then to source it
 nmap <silent> ,ev :e $MYVIMRC<cr>
 nmap <silent> ,sv :so $MYVIMRC<cr>
@@ -68,14 +70,13 @@ nmap <silent> <S-tab> :bp<cr>
 " Git Blame on Selection.
 vmap <Leader>b :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
 
-set guioptions-=T
 set background=dark
 colorscheme solarized
 set number
-" set lines=50 columns=100
 set nowrap
 set linebreak
 set winwidth=85
+set encoding=utf-8
 
 set laststatus=2
 set statusline=%f%(\ %M%)%(\ %R%)%(\ %W%)%(\ %y%)%=%-14.(%l,%c%V%)\ %P
