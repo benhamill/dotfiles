@@ -98,3 +98,6 @@ set cpoptions+=$
 set tags=./tags;
 
 let g:CommandTMaxFiles=30000
+
+" Don't beep and don't flash. Bleh!
+set noeb vb t_vb=
