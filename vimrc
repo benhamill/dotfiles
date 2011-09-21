@@ -57,7 +57,9 @@ autocmd BufWinEnter *.txt set textwidth=80
 nmap <silent> ,nt :NERDTreeToggle<cr>
 
 " Sort files and directories mixed up.
-let NERDTreeSortOrder=['*', '^[A-Z]', '^README.*', '^Gemfile.*', '^tags$']
+let NERDTreeSortOrder=['*', '^[A-Z]', '^README.*', '^Gemfile']
+let NERDTreeDirArrows=1
+let NERDTreeIgnore=['^tags$', '^Gemfile\.lock$', '\~$']
 
 " Map ctrl-t to the command-t plugin command.
 nmap <silent> <C-t> <Leader>t
