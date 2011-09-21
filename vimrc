@@ -56,6 +56,9 @@ autocmd BufWinEnter *.txt set textwidth=80
 " Quick access for NERDTree
 nmap <silent> ,nt :NERDTreeToggle<cr>
 
+" Sort files and directories mixed up.
+let NERDTreeSortOrder=['*', '^[A-Z]', '^README.*', '^Gemfile.*', '^tags$']
+
 " Map ctrl-t to the command-t plugin command.
 nmap <silent> <C-t> <Leader>t
 
