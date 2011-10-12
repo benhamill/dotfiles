@@ -1,11 +1,13 @@
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+call pathogen#infect()
+
+runtime macros/matchit.vim
+
 set nocompatible
 
 let mapleader=","
 
 filetype off
-
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
 
 syntax on
 filetype plugin indent on
@@ -32,8 +34,6 @@ endif
 
 " Lots of colors
 set t_Co=256
-
-runtime macros/matchit.vim
 
 " For showing hidden characters
 set listchars=tab:▸\ ,eol:¬
