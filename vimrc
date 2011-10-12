@@ -1,4 +1,4 @@
-runtime bundle/vim-pathogen/autoload/pathogen.vim
+runtime bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect()
 
 runtime macros/matchit.vim
@@ -73,20 +73,22 @@ nmap <silent> <leader>sv :so $MYVIMRC<cr>
 " Text editor mode
 autocmd BufWinEnter *.txt set textwidth=80
 
-" Quick access for NERDTree
-nmap <silent> <leader>nt :NERDTreeToggle<cr>
-
 " Toggle on and off showing hidden characters
 nmap <silent> <leader>l :set list!<CR>
 
+" Easier window nav
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
+
+" Quick access for NERDTree
+nmap <silent> <leader>nt :NERDTreeToggle<cr>
 
 " Sort files and directories mixed up.
 let NERDTreeSortOrder=['*', '^[A-Z]', '^README.*', '^Gemfile']
 let NERDTreeDirArrows=1
 let NERDTreeIgnore=['^tags$', '^Gemfile\.lock$', '\~$']
-
-" Map ctrl-t to the command-t plugin command.
-nmap <silent> <C-t> <Leader>t
 
 " Map ctrl-n and ctrl-p to :cn and :cp respectively.
 nmap <silent> <C-n> :cn<cr>
