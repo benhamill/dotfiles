@@ -1,5 +1,7 @@
 set nocompatible
 
+let mapleader=","
+
 filetype off
 
 call pathogen#runtime_append_all_bundles()
@@ -8,30 +10,48 @@ call pathogen#helptags()
 syntax on
 filetype plugin indent on
 
-augroup filetypedetect
-  au BufNewFile,BufRead *.pig set filetype=pig syntax=pig
-augroup END
+" My preferred default tab settings (makes tabs stand out)
+set ts=4 sts=2 sw=2 expandtab
 
+" Only do this part when compiled with support for autocommands
+if has("autocmd")
+  " Syntax of these languages is fussy over tabs Vs spaces
+  autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
+  autocmd FileType python setlocal ts=4 sts=4 sw=4 expandtab
+
+  " Treat .rss files as XML
+  autocmd BufNewFile,BufRead *.pig set filetype=pig syntax=pig
+
+  " Highlight trailing whitespace
+  autocmd ColorScheme * highlight ExtraWhitespace ctermbg=darkgray guibg=#333333
+  autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+  autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+  autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+  autocmd BufWinLeave * call clearmatches()
+endif
+
+" Lots of colors
 set t_Co=256
 
 runtime macros/matchit.vim
 
-" Highlight whitespace
-autocmd ColorScheme * highlight ExtraWhitespace ctermbg=darkgray guibg=#333333
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-autocmd BufWinLeave * call clearmatches()
+" For showing hidden characters
+set listchars=tab:▸\ ,eol:¬
 
-" Highlight tabs
-" autocmd ColorScheme * highlight Tabs ctermbg=darkred guibg=#440000
-" autocmd BufWinEnter * match Tabs /\t\+/
-" autocmd InsertEnter * match Tabs /\t\+/
-" autocmd InsertLeave * match Tabs /\t\+/
-" autocmd BufWinLeave * call clearmatches()
+" Trim trailing whitespace on command
+command! TM :call <SID>StripTrailingWhitespaces()<CR>
 
-" And trim it on command
-command! TW :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s
+function! <SID>StripTrailingWhitespaces()
+    " Preparation: save last search, and cursor position.
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    " Do the business:
+    %s/\s\+$//e
+    " Clean up: restore previous search history, and cursor position
+    let @/=_s
+    call cursor(l, c)
+endfunction
 
 " Next buffer and close old one.
 command! BD :bp<bar>:bd#
@@ -47,14 +67,18 @@ set wildmenu
 set autoread
 
 " Macros to edit this file and then to source it
-nmap <silent> ,ev :e $MYVIMRC<cr>
-nmap <silent> ,sv :so $MYVIMRC<cr>
+nmap <silent> <leader>ev :e $MYVIMRC<cr>
+nmap <silent> <leader>sv :so $MYVIMRC<cr>
 
 " Text editor mode
 autocmd BufWinEnter *.txt set textwidth=80
 
 " Quick access for NERDTree
-nmap <silent> ,nt :NERDTreeToggle<cr>
+nmap <silent> <leader>nt :NERDTreeToggle<cr>
+
+" Toggle on and off showing hidden characters
+nmap <silent> <leader>l :set list!<CR>
+
 
 " Sort files and directories mixed up.
 let NERDTreeSortOrder=['*', '^[A-Z]', '^README.*', '^Gemfile']
@@ -85,16 +109,6 @@ set encoding=utf-8
 
 set laststatus=2
 set statusline=%f%(\ %M%)%(\ %R%)%(\ %W%)%(\ %y%)%=%-14.(%l,%c%V%)\ %P
-
-function! Tabstyle_spaces()
-  " Use 2 spaces
-  set softtabstop=2
-  set shiftwidth=2
-  set tabstop=2
-  set expandtab
-endfunction
-
-call Tabstyle_spaces()
 
 set si
 set ai
