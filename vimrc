@@ -20,9 +20,13 @@ if has("autocmd")
   " Syntax of these languages is fussy over tabs Vs spaces
   autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
   autocmd FileType python setlocal ts=4 sts=4 sw=4 expandtab
+  autocmd Filetype text setlocal tw=80 formatoptions+=a spell
 
-  " Treat .rss files as XML
+  " Syntax highlighting for pig files
   autocmd BufNewFile,BufRead *.pig set filetype=pig syntax=pig
+
+  " Automatically source my vimrc when I save it
+  autocmd BufWritePost .vimrc source $MYVIMRC
 
   " Highlight trailing whitespace
   autocmd ColorScheme * highlight ExtraWhitespace ctermbg=darkgray guibg=#333333
@@ -39,18 +43,18 @@ set t_Co=256
 set listchars=tab:▸\ ,eol:¬
 
 " Trim trailing whitespace on command
-command! TM :call <SID>StripTrailingWhitespaces()<CR>
+command! TW :call <SID>StripTrailingWhitespaces()<CR>
 
 function! <SID>StripTrailingWhitespaces()
-    " Preparation: save last search, and cursor position.
-    let _s=@/
-    let l = line(".")
-    let c = col(".")
-    " Do the business:
-    %s/\s\+$//e
-    " Clean up: restore previous search history, and cursor position
-    let @/=_s
-    call cursor(l, c)
+  " Preparation: save last search, and cursor position.
+  let _s=@/
+  let l = line(".")
+  let c = col(".")
+  " Do the business:
+  %s/\s\+$//e
+  " Clean up: restore previous search history, and cursor position
+  let @/=_s
+  call cursor(l, c)
 endfunction
 
 " Next buffer and close old one.
@@ -66,12 +70,8 @@ set wildmenu
 
 set autoread
 
-" Macros to edit this file and then to source it
-nmap <silent> <leader>ev :e $MYVIMRC<cr>
-nmap <silent> <leader>sv :so $MYVIMRC<cr>
-
-" Text editor mode
-autocmd BufWinEnter *.txt set textwidth=80
+" Edit this file
+nmap <silent> <leader>v :vsp $MYVIMRC<cr>
 
 " Toggle on and off showing hidden characters
 nmap <silent> <leader>l :set list!<CR>
