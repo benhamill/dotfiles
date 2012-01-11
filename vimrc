@@ -104,6 +104,9 @@ vmap <Leader>b :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'
 " FuzzyFinder Shortcuts
 nmap <Leader>t :FufTaggedFile<CR>
 
+" Refresh CTags
+nmap <Leader>c :!ctags -R .<CR>
+
 set background=dark
 colorscheme solarized
 set number
