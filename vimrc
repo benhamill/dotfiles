@@ -74,7 +74,7 @@ set autoread
 nmap <silent> <leader>v :vsp $MYVIMRC<cr>
 
 " Toggle on and off showing hidden characters
-nmap <silent> <leader>l :set list!<CR>
+nmap <silent> <leader>h :set list!<CR>
 
 " Easier window nav
 nmap <C-h> <C-w>h
@@ -118,7 +118,6 @@ set encoding=utf-8
 set laststatus=2
 set statusline=%f%(\ %M%)%(\ %R%)%(\ %W%)%(\ %y%)%=%-14.(%l,%c%V%)\ %P
 
-set si
 set ai
 set cpoptions+=$
 
