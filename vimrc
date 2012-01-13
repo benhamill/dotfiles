@@ -123,6 +123,9 @@ set cpoptions+=$
 
 set tags=./tags;
 
+set noswapfile
+set nobackup
+
 let g:CommandTMaxFiles=30000
 
 " Don't beep and don't flash. Bleh!
