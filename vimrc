@@ -123,6 +123,8 @@ set cpoptions+=$
 
 set tags=./tags;
 
+set pastetoggle=<F2>
+
 set noswapfile
 set nobackup
 
