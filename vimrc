@@ -105,7 +105,7 @@ vmap <Leader>b :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'
 nmap <Leader>t :FufTaggedFile<CR>
 
 " Refresh CTags
-nmap <Leader>c :!ctags -R .<CR>
+nmap <Leader>c :!ctags --extra=+fq -R .<CR><CR>
 
 set background=dark
 colorscheme solarized
