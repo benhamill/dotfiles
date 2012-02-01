@@ -25,6 +25,10 @@ if has("autocmd")
   " Syntax highlighting for pig files
   autocmd BufNewFile,BufRead *.pig set filetype=pig syntax=pig
 
+  autocmd BufNewFile,BufRead *.tsv set filetype=tsv
+  autocmd FileType tsv set noexpandtab
+  autocmd FileType tsv set list
+
   " Automatically source my vimrc when I save it
   autocmd BufWritePost .vimrc source $MYVIMRC
 
