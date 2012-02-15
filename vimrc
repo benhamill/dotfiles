@@ -1,5 +1,6 @@
 runtime bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect()
+call pathogen#helptags()
 
 runtime macros/matchit.vim
 
@@ -31,20 +32,13 @@ if has("autocmd")
 
   " Automatically source my vimrc when I save it
   autocmd BufWritePost .vimrc source $MYVIMRC
-
-  " Highlight trailing whitespace
-  autocmd ColorScheme * highlight ExtraWhitespace ctermbg=darkgray guibg=#333333
-  autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-  autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-  autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-  autocmd BufWinLeave * call clearmatches()
 endif
 
 " Lots of colors
 set t_Co=256
 
 " For showing hidden characters
-set listchars=tab:▸\ ,eol:¬
+set list listchars=tab:▸\ ,trail:•
 
 " Trim trailing whitespace on command
 command! TW :call <SID>StripTrailingWhitespaces()<CR>
@@ -76,9 +70,6 @@ set autoread
 
 " Edit this file
 nmap <silent> <leader>v :vsp $MYVIMRC<cr>
-
-" Toggle on and off showing hidden characters
-nmap <silent> <leader>h :set list!<CR>
 
 " Easier window nav
 nmap <C-h> <C-w>h
@@ -118,6 +109,7 @@ set nowrap
 set linebreak
 set winwidth=85
 set encoding=utf-8
+set completeopt=menu,preview,longest
 
 set laststatus=2
 set statusline=%f%(\ %M%)%(\ %R%)%(\ %W%)%(\ %y%)%=%-14.(%l,%c%V%)\ %P
