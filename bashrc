@@ -93,8 +93,12 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+if [ -f ~/.bash/bash_aliases ]; then
+    . ~/.bash/bash_aliases
+fi
+
+if [ -f ~/.bash/bash_aliases.local ]; then
+    . ~/.bash/bash_aliases.local
 fi
 
 # enable programmable completion features (you don't need to enable
@@ -104,8 +108,8 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-if [ -f ~/.bash_prompt ]; then
-  . ~/.bash_prompt
+if [ -f ~/.bash/bash_prompt ]; then
+  . ~/.bash/bash_prompt
 fi
 
 # make sure rbenv shit is in the PATH.
