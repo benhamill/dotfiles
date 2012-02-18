@@ -2,18 +2,6 @@ alias ls='ls --color'
 alias ll='ls -l'
 alias la='ls -a'
 
-alias monitor='xrandr --output HDMI1 --mode 1920x1080 && defaultscreen && xrandr --output HDMI1 --right-of LVDS1'
-
-alias workmouse='xinput set-button-map "Logitech USB-PS/2 Optical Mouse" 1 2 3 5 4 7 6'
-alias defaultscreen='xrandr --output LVDS1 --mode 1600x900 && xrandr --auto'
-alias hdmi2right='xrandr --output HDMI2 --right-of LVDS1'
-alias hdmi2left='xrandr --output HDMI2 --left-of LVDS1'
-alias hdmi2off='xrandr --output HDMI2 --off'
-
-alias dock='xrandr --output HDMI2 --mode 1920x1080 && defaultscreen && hdmi2right && workmouse'
-alias pair='xrandr --output HDMI2 --mode 1920x1200 && defaultscreen && hdmi2left && workmouse'
-alias solo='defaultscreen && hdmi2off && workmouse'
-
 alias be='bundle exec'
 alias rebundle='bundle install --binstubs'
 alias rehash='rbenv rehash'
