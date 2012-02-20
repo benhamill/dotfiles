@@ -40,6 +40,5 @@ alias sl_app='oibsh app1.sl.prod.ec2.oib.com'
 alias sl_alpha='oibsh app1.sl.alpha.ec2.oib.com'
 alias sl_alpha_deploy='HOSTS=app1.sl.alpha.ec2.oib.com cap production deploy'
 
-alias oibsh='ssh -i ~/.ssh/oi-production-keypair.key -l root'
-alias oibdb='ssh -i ~/.ssh/oi-production-keypair.key'
+alias oibsh='ssh -i ~/.ssh/oi-production-keypair.key -l ubuntu'
 alias oibsftp='sftp -i ~/.ssh/oi-production-keypair.key'
