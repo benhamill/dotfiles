@@ -93,9 +93,6 @@ nmap <silent> <C-p> :cp<cr>
 nmap <silent> <tab> :bn<cr>
 nmap <silent> <S-tab> :bp<cr>
 
-" Git Blame on Selection.
-vmap <Leader>b :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
-
 " FuzzyFinder Shortcuts
 nmap <Leader>t :FufTaggedFile<CR>
 
