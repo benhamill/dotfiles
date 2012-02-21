@@ -25,7 +25,7 @@ function gcb() {
   git branch | grep '^\*' | cut -c3-
 }
 alias gpn='git push -u origin `gcb`'
-alias gpr='xdg-open "https://github.com/otherinbox/rails-app/pull/new/`gcb`"'
+alias gpr='xdg-open "https://github.com/otherinbox/oib/pull/new/`gcb`"'
 
 alias is_app='oibsh app1.is.prod.ec2.oib.com'
 alias is_worker='oibsh worker1.is.prod.ec2.oib.com'
