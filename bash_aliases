@@ -24,8 +24,13 @@ alias oib_ben_deploy='HOSTS=app.ben.ec2.oib.com cap production deploy:frontend'
 function gcb() {
   git branch | grep '^\*' | cut -c3-
 }
+
+function gco() {
+  grep url .git/config | cut -d: -f2 | sed -e 's/\.git//'
+}
+
 alias gpn='git push -u origin `gcb`'
-alias gpr='xdg-open "https://github.com/otherinbox/oib/pull/new/`gcb`"'
+alias gpr='xdg-open "https://github.com/`gco`/pull/new/`gcb`"'
 
 alias is_app='oibsh app1.is.prod.ec2.oib.com'
 alias is_worker='oibsh worker1.is.prod.ec2.oib.com'
