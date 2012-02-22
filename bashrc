@@ -131,6 +131,9 @@ export EC2_URL=https://ec2.us-east-1.amazonaws.com
 export EC2_PRIVATE_KEY=$HOME/.ec2/pk-YBSJD3UQADEXGEX5SRTVJQBLAU3S23A5.pem
 export EC2_CERT=$HOME/.ec2/cert-YBSJD3UQADEXGEX5SRTVJQBLAU3S23A5.pem
 
+# Rubunius in 1.9 mode
+export RBXOPT=-X19
+
 fi # Close the if started on line 1.
 
 eval `keychain --eval --agents ssh id_rsa`
