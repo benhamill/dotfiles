@@ -15,12 +15,6 @@ alias oib_alpha='oibsh app1.alpha.ec2.oib.com'
 alias oib_trainer='oibsh ec2-184-73-75-183.compute-1.amazonaws.com'
 alias oib_graphite='oibsh ec2-184-72-138-168.compute-1.amazonaws.com'
 
-alias oib_alpha_deploy='HOSTS=app1.alpha.ec2.oib.com cap production deploy:frontend'
-alias oib_alpha2_deploy='HOSTS=app2.alpha.ec2.oib.com cap alpha deploy'
-
-alias oib_ben='oibsh app.ben.ec2.oib.com'
-alias oib_ben_deploy='HOSTS=app.ben.ec2.oib.com cap production deploy:frontend'
-
 function gcb() {
   git branch | grep '^\*' | cut -c3-
 }
@@ -31,13 +25,6 @@ function gco() {
 
 alias gpn='git push -u origin `gcb`'
 alias gpr='xdg-open "https://github.com/`gco`/pull/new/`gcb`"'
-
-alias is_app='oibsh app1.is.prod.ec2.oib.com'
-alias is_worker='oibsh worker1.is.prod.ec2.oib.com'
-alias is_staging='oibsh ec2-184-72-82-148.compute-1.amazonaws.com'
-alias is_app_deploy='be cap HOSTS=app1.is.prod.ec2.oib.com ROLE=app production deploy'
-alias is_worker_deploy='be cap HOSTS=worker1.is.prod.ec2.oib.com ROLE=worker production deploy'
-alias is_deploy='be cap production deploy'
 
 alias in_app='oibsh app1.insights.prod.ec2.oib.com'
 
