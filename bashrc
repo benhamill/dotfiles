@@ -115,6 +115,9 @@ if [ -f ~/.bash/bash_prompt ]; then
   . ~/.bash/bash_prompt
 fi
 
+# personal binaries should be in the path.
+export PATH="$HOME/bin:$PATH"
+
 # make sure rbenv shit is in the PATH.
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
