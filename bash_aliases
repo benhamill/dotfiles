@@ -28,7 +28,7 @@ alias gpr='xdg-open "https://github.com/`gco`/pull/new/`gcb`"'
 
 alias in_app='oibsh app1.insights.prod.ec2.oib.com'
 
-alias sl_app='oibsh app1.sl.prod.ec2.oib.com'
+alias sl_app='ssh -i ~/.ssh/oi-production-keypair.key -l root app1.sl.prod.ec2.oib.com'
 alias sl_alpha='oibsh app1.sl.alpha.ec2.oib.com'
 alias sl_alpha_deploy='HOSTS=app1.sl.alpha.ec2.oib.com cap production deploy'
 
