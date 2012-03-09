@@ -21,7 +21,11 @@ function gco() {
 function gfb() {
   branch=`gcb`
 
-  git checkout master && git branch -d $branch && git push origin :$branch
+  if [[ -z `git branch --no-merged master | grep $branch` ]]; then
+    git checkout master && git branch -d $branch && git push origin :$branch
+  else
+    echo "Hey, man, $branch isn't merged yet!"
+  fi
 }
 
 alias gpn='git push -u origin `gcb`'
