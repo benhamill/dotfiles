@@ -127,7 +127,12 @@ export PATH="./bin:$PATH"
 
 # export PAGER="vimpager"
 export EDITOR="vim"
-export BROWSER="chromium"
+
+if [[ -f $(which google-chrome) ]]; then
+  export BROWSER="google-chrome"
+else
+  export BROWSER="chromium"
+fi
 
 export EC2_KEYPAIR=bencos
 export EC2_URL=https://ec2.us-east-1.amazonaws.com
