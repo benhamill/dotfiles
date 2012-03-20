@@ -128,7 +128,7 @@ export PATH="./bin:$PATH"
 # export PAGER="vimpager"
 export EDITOR="vim"
 
-if [[ -f $(which google-chrome) ]]; then
+if [[ $(which google-chrome 2> /dev/null) ]]; then
   export BROWSER="google-chrome"
 else
   export BROWSER="chromium"
