@@ -32,4 +32,4 @@ alias gpn='git push -u origin `gcb`'
 alias gpr='xdg-open "https://github.com/`gco`/pull/new/`gcb`"'
 
 alias in_app='oibsh app1.insights.prod.ec2.oib.com'
-alias oib_jenkins='ssh -L8080:localhost:8080 ec2-50-17-93-145.compute-1.amazonaws.com'
+alias oib_jenkins='ssh -L8080:localhost:8080 -i ~/.ssh/oi-production-keypair.key ubuntu@ec2-50-17-93-145.compute-1.amazonaws.com'
