@@ -97,7 +97,7 @@ nmap <silent> <S-tab> :bp<cr>
 nmap <Leader>t :FufTaggedFile<CR>
 
 " Refresh CTags
-nmap <Leader>c :!ctags --extra=+fq -R .<CR><CR>
+nmap <Leader>c :!ctags --langmap=Ruby:+.haml.slim --extra=+fq -R .<CR><CR>
 
 set background=dark
 colorscheme solarized
