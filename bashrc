@@ -115,6 +115,9 @@ if [ -f ~/.bash/bash_prompt ]; then
   . ~/.bash/bash_prompt
 fi
 
+# OHGOD use vi bindings
+set -o vi
+
 # personal binaries should be in the path.
 export PATH="$HOME/bin:$PATH"
 
@@ -125,7 +128,6 @@ eval "$(rbenv init -)"
 # make sure bundle's binstubs are first in the PATH.
 export PATH="./bin:$PATH"
 
-# export PAGER="vimpager"
 export EDITOR="vim"
 
 if [[ $(which google-chrome 2> /dev/null) ]]; then
