@@ -42,7 +42,7 @@ set t_Co=256
 set list listchars=tab:▸\ ,trail:•
 
 " Trim trailing whitespace on command
-command! TW :call <SID>StripTrailingWhitespaces()<CR>
+command! TW :call <SID>StripTrailingWhitespaces()
 
 function! <SID>StripTrailingWhitespaces()
   " Preparation: save last search, and cursor position.
