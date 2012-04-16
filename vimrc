@@ -35,9 +35,6 @@ if has("autocmd")
   autocmd BufWritePost .vimrc source $MYVIMRC
 endif
 
-" Lots of colors
-set t_Co=256
-
 " For showing hidden characters
 set list listchars=tab:▸\ ,trail:•
 
