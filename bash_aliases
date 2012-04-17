@@ -7,6 +7,8 @@ alias rebundle='bundle install --binstubs'
 alias rehash='rbenv rehash'
 alias bundlehash='rebundle && rehash'
 
+alias packer='packer --auronly'
+
 alias irb=pry
 alias rpry='pry -r ./config/environment'
 
