@@ -17,7 +17,7 @@ function gcb() {
 }
 
 function gco() {
-  grep url .git/config | cut -d: -f2 | sed -e 's/\.git//'
+  grep url .git/config | grep github | cut -d: -f2 | sed -e 's/\.git//'
 }
 
 function gfb() {
