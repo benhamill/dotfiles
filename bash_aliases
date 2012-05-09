@@ -21,10 +21,13 @@ function gco() {
 function gfb() {
   branch=`gcb`
 
-  if [[ -z `git branch --no-merged master | grep $branch` ]]; then
-    git checkout master && git branch -d $branch && git push origin :$branch
+  git checkout master && git pull --prune
+
+  if [[ $1 == '--force' || -z `git branch --no-merged master | grep $branch` ]]; then
+    git branch -d $branch && git push origin :$branch
   else
     echo "Hey, man, $branch isn't merged yet!"
+    git checkout $branch
   fi
 }
 
