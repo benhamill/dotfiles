@@ -7,6 +7,8 @@ alias rebundle='bundle install --binstubs'
 alias rehash='rbenv rehash'
 alias bundlehash='rebundle && rehash'
 
+alias packer='packer --auronly'
+
 alias irb=pry
 alias rpry='pry -r ./config/environment'
 
@@ -15,7 +17,7 @@ function gcb() {
 }
 
 function gco() {
-  grep url .git/config | cut -d: -f2 | sed -e 's/\.git//'
+  grep url .git/config | grep github | cut -d: -f2 | sed -e 's/\.git//'
 }
 
 function gfb() {
