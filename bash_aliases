@@ -12,6 +12,8 @@ alias packer='packer --auronly'
 alias irb=pry
 alias rpry='pry -r ./config/environment'
 
+alias git=hub
+
 function gcb() {
   git branch | grep '^\*' | cut -c3-
 }
