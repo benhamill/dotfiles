@@ -31,8 +31,8 @@ function gfb() {
   fi
 }
 
-alias gpn='git push -u'
-alias gpr='git pull-request'
+alias gpn='echo "git push -u" && git push -u'
+alias gpr='echo "git pull-request" && git pull-request'
 
 alias in_app='oibsh app1.insights.prod.ec2.oib.com'
 alias oib_jenkins='ssh -L8080:localhost:8080 -i ~/.ssh/oi-production-keypair.key ubuntu@ec2-50-17-93-145.compute-1.amazonaws.com'
