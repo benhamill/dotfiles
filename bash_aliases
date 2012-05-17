@@ -18,10 +18,6 @@ function gcb() {
   git branch | grep '^\*' | cut -c3-
 }
 
-function gco() {
-  grep url .git/config | grep github | cut -d: -f2 | sed -e 's/\.git//'
-}
-
 function gfb() {
   branch=`gcb`
 
@@ -35,8 +31,8 @@ function gfb() {
   fi
 }
 
-alias gpn='git push -u origin `gcb`'
-alias gpr='xdg-open "https://github.com/`gco`/pull/new/`gcb`"'
+alias gpn='git push -u'
+alias gpr='git pull-request'
 
 alias in_app='oibsh app1.insights.prod.ec2.oib.com'
 alias oib_jenkins='ssh -L8080:localhost:8080 -i ~/.ssh/oi-production-keypair.key ubuntu@ec2-50-17-93-145.compute-1.amazonaws.com'
