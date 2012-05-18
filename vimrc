@@ -22,7 +22,8 @@ if has("autocmd")
   autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
   autocmd FileType python setlocal ts=4 sts=4 sw=4 expandtab
   autocmd Filetype text setlocal tw=80 formatoptions+=a spell
-  autocmd Filetype markdown setlocal tw=80 formatoptions+=a spell
+  autocmd BufNewFile,BufRead *.md set filetype=markdown syntax=markdown
+  autocmd Filetype markdown setlocal spell
 
   " Syntax highlighting for pig files
   autocmd BufNewFile,BufRead *.pig set filetype=pig syntax=pig
@@ -79,7 +80,7 @@ nmap <C-l> <C-w>l
 nmap <silent> <leader>nt :NERDTreeToggle<cr>
 
 " Sort files and directories mixed up.
-let NERDTreeSortOrder=['*', '^[A-Z]', '^README.*', '^Gemfile']
+let NERDTreeSortOrder=['*', '^[A-Z]', '^README*', '^Gemfile']
 let NERDTreeDirArrows=1
 let NERDTreeIgnore=['^tags$', '^Gemfile\.lock$', '\~$']
 
@@ -95,7 +96,7 @@ nmap <silent> <S-tab> :bp<cr>
 nmap <Leader>t :FufTaggedFile<CR>
 
 " Refresh CTags
-nmap <Leader>c :!ctags --langmap=Ruby:+.haml.slim --extra=+fq -R .<CR><CR>
+nmap <Leader>c :!ctags --langmap=Ruby:+.haml.slim.erb --extra=+fq -R .<CR><CR>
 
 set background=dark
 colorscheme solarized
