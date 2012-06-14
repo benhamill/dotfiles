@@ -31,6 +31,8 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.tsv set filetype=tsv
   autocmd FileType tsv setlocal noexpandtab
 
+  autocmd BufNewFile,BufRead *.fish set filetype=fish syntax=fish
+
   " Automatically source my vimrc when I save it
   autocmd BufWritePost .vimrc source $MYVIMRC
 endif
@@ -95,7 +97,7 @@ nmap <silent> <S-tab> :bp<cr>
 nmap <Leader>t :FufTaggedFile<CR>
 
 " Refresh CTags
-nmap <Leader>c :!ctags --langmap=Ruby:+.haml.slim.erb --extra=+fq -R .<CR><CR>
+nmap <Leader>c :!ctags --langmap=Ruby:+.haml.slim.erb --extra=+fq -R --langdef=scss --langmap=scss:.scss.sass.css .<CR><CR>
 
 set background=dark
 colorscheme solarized
