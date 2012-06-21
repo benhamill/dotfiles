@@ -35,4 +35,3 @@ alias gpn='echo "git push -u" && git push -u'
 alias gpr='echo "git pull-request" && git pull-request'
 
 alias in_app='oibsh app1.insights.prod.ec2.oib.com'
-alias oib_jenkins='ssh -L8080:localhost:80 ci.oib.com'
