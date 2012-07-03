@@ -42,14 +42,14 @@ function parse_push_status () {
   if [[ "$1" =~ "Your branch is ahead" ]]; then
     echo "${GREEN}✔${NORMAL}"
   elif [[ "$1" =~ "Your branch is behind" ]]; then
-    echo "${YELLOW}✘${NORMAL}"
+    echo "${YELLOW}⚡${NORMAL}"
   elif [[ "$1" =~ "have diverged" ]]; then
     echo "${RED}✘${NORMAL}"
   fi
 }
 
 function ps1_function {
-  export PS1="$SUBTLE[\A]$NORMAL \W$(parse_git_branch) ${CYAN}⚡${NORMAL} "
+  export PS1="$SUBTLE[\A]$NORMAL \W$(parse_git_branch) ${CYAN}❱${NORMAL} "
 }
 
 export PROMPT_COMMAND='ps1_function'
