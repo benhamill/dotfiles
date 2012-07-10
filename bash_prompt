@@ -4,6 +4,7 @@ RED="\[\e[0;31m\]"
 YELLOW="\[\e[0;33m\]"
 GREEN="\[\e[0;32m\]"
 BLUE="\[\e[0;34m\]"
+MAGENTA="\[\e[0;35m\]"
 CYAN="\[\e[0;36m\]"
 SUBTLE="\[\e[1;32m\]"
 NORMAL="\[\e[0m\]"
@@ -18,7 +19,7 @@ function parse_git_branch {
     commit_state_color=$(parse_commit_status "$status")
     push_status=$(parse_push_status "$status")
 
-    result="${commit_state_color}[${branch}${NORMAL}${push_status}${commit_state_color}]${NORMAL}"
+    result="${commit_state_color}${branch}${NORMAL}${push_status}${commit_state_color}${NORMAL}"
 
     echo " ${result}"
   fi
@@ -40,16 +41,17 @@ function parse_commit_status () {
 
 function parse_push_status () {
   if [[ "$1" =~ "Your branch is ahead" ]]; then
-    echo "${GREEN}✔${NORMAL}"
+    echo "${GREEN} ✔${NORMAL}"
   elif [[ "$1" =~ "Your branch is behind" ]]; then
-    echo "${YELLOW}⚡${NORMAL}"
+    echo "${YELLOW} ⚡${NORMAL}"
   elif [[ "$1" =~ "have diverged" ]]; then
-    echo "${RED}✘${NORMAL}"
+    echo "${RED} ✘${NORMAL}"
   fi
 }
 
 function ps1_function {
-  export PS1="$SUBTLE[\A]$NORMAL \W$(parse_git_branch) ${CYAN}❱${NORMAL} "
+  # export PS1="${MAGENTA}●${NORMAL} \W$(parse_git_branch) ${RED}$?${NORMAL}${CYAN}❱${NORMAL} "
+  export PS1="${MAGENTA}●${NORMAL} \W$(parse_git_branch) ${CYAN}❱${NORMAL} "
 }
 
 export PROMPT_COMMAND='ps1_function'
