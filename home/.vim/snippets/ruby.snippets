@@ -1,0 +1,23 @@
+# #!/usr/bin/ruby
+#
+# Custom ruby snippets
+snippet it
+	it "${1:behaves in some way}" do
+	  ${2}
+	end
+snippet desc
+	describe ${1:"some object or method"} do
+		${2}
+	end
+snippet {
+	{ ${1} 
+snippet con
+	context "${1:doing something}" do
+		${2}
+	end
+snippet d
+	do
+		${1}
+	end
+snippet |
+	|${1:args}| ${2}
