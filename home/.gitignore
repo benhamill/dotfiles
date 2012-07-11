@@ -1,0 +1,8 @@
+*.swp
+*.swo
+.netrwhist
+tags
+bin
+.rbenv-version
+.bundle
+tags-ja

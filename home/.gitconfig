@@ -1,0 +1,23 @@
+[user]
+  name = Ben Hamill
+  email = git-commits@benhamill.com
+[alias]
+  st = status
+  co = checkout
+  b = branch
+  l = log --pretty=format:'%C(yellow)%H%C(reset) %C(blue)%an%C(reset) %C(green)(%cr)%C(reset) - %s'
+  p = pull --prune
+[core]
+  excludesfile = ~/.gitignore
+[branch]
+  autosetuprebase = always
+[color]
+  diff = true
+  status = true
+[merge]
+  tool = vimdiff
+[push]
+  default = current
+[github]
+  user = benhamill
+  token = $GITHUB_TOKEN ; Set in ~/.bashrc.local
