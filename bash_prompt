@@ -49,9 +49,18 @@ function parse_push_status () {
   fi
 }
 
+function error_code () {
+  exit_code=$1
+
+  if [ $exit_code -ne 0 ]; then
+    echo "$exit_code"
+  fi
+}
+
 function ps1_function {
-  # export PS1="${MAGENTA}●${NORMAL} \W$(parse_git_branch) ${RED}$?${NORMAL}${CYAN}❱${NORMAL} "
-  export PS1="${MAGENTA}●${NORMAL} \W$(parse_git_branch) ${CYAN}❱${NORMAL} "
+  error_code=$?
+  export PS1="${MAGENTA}●${NORMAL} \W$(parse_git_branch) ${RED}$(error_code $error_code)${NORMAL}${CYAN}❱${NORMAL} "
+  # export PS1="${MAGENTA}●${NORMAL} \W$(parse_git_branch) ${CYAN}❱${NORMAL} "
 }
 
 export PROMPT_COMMAND='ps1_function'
