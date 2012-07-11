@@ -1,0 +1,69 @@
+[submodule "home/.vim/bundle/vim-rails"]
+	path = home/.vim/bundle/vim-rails
+	url = https://github.com/tpope/vim-rails.git
+[submodule "home/.vim/bundle/snipmate"]
+	path = home/.vim/bundle/snipmate
+	url = https://github.com/msanders/snipmate.vim.git
+[submodule "home/.vim/bundle/tcomment"]
+	path = home/.vim/bundle/tcomment
+	url = https://github.com/tomtom/tcomment_vim.git
+[submodule "home/.vim/bundle/autoclose"]
+	path = home/.vim/bundle/autoclose
+	url = https://github.com/vim-scripts/AutoClose.git
+[submodule "home/.vim/bundle/bufonly"]
+	path = home/.vim/bundle/bufonly
+	url = https://github.com/duff/vim-bufonly.git
+[submodule "home/.vim/bundle/nerdtree"]
+	path = home/.vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "home/.vim/bundle/commant-t"]
+	path = home/.vim/bundle/commant-t
+	url = git://git.wincent.com/command-t.git
+[submodule "home/.vim/bundle/textobj-user"]
+	path = home/.vim/bundle/textobj-user
+	url = https://github.com/kana/vim-textobj-user.git
+[submodule "home/.vim/bundle/textobj-rubyblock"]
+	path = home/.vim/bundle/textobj-rubyblock
+	url = https://github.com/nelstrom/vim-textobj-rubyblock.git
+[submodule "home/.vim/bundle/surround"]
+	path = home/.vim/bundle/surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule "home/.vim/bundle/scss-syntax"]
+	path = home/.vim/bundle/scss-syntax
+	url = https://github.com/cakebaker/scss-syntax.vim.git
+[submodule "home/.vim/bundle/pig"]
+	path = home/.vim/bundle/pig
+	url = https://github.com/vim-scripts/pig.vim.git
+[submodule "home/.vim/bundle/solarized"]
+	path = home/.vim/bundle/solarized
+	url = https://github.com/altercation/vim-colors-solarized.git
+[submodule "home/.vim/bundle/ack"]
+	path = home/.vim/bundle/ack
+	url = https://github.com/mileszs/ack.vim.git
+[submodule "home/.vim/bundle/slim"]
+	path = home/.vim/bundle/slim
+	url = https://github.com/bbommarito/vim-slim.git
+[submodule "home/.vim/bundle/vim-coffee-script"]
+	path = home/.vim/bundle/vim-coffee-script
+	url = https://github.com/kchmck/vim-coffee-script.git
+[submodule "home/.vim/bundle/pathogen"]
+	path = home/.vim/bundle/pathogen
+	url = https://github.com/tpope/vim-pathogen.git
+[submodule "home/.vim/bundle/fuzzyfinder"]
+	path = home/.vim/bundle/fuzzyfinder
+	url = https://github.com/clones/vim-fuzzyfinder.git
+[submodule "home/.vim/bundle/l9"]
+	path = home/.vim/bundle/l9
+	url = https://github.com/clones/vim-l9.git
+[submodule "home/.vim/bundle/vim-fugitive"]
+	path = home/.vim/bundle/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule "home/.vim/bundle/tabular"]
+	path = home/.vim/bundle/tabular
+	url = https://github.com/godlygeek/tabular.git
+[submodule "home/.vim/bundle/markdown"]
+	path = home/.vim/bundle/markdown
+	url = https://github.com/tpope/vim-markdown.git
+[submodule "home/.vim/bundle/fish"]
+	path = home/.vim/bundle/fish
+	url = https://github.com/vim-scripts/fish.vim.git
