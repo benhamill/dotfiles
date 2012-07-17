@@ -1,6 +1,6 @@
 [user]
   name = Ben Hamill
-  email = git-commits@benhamill.com
+  email = $GIT_EMAIL ; Set in ~/.bashrc.local
 [alias]
   st = status
   co = checkout
