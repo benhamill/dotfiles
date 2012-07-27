@@ -141,6 +141,12 @@ export EC2_URL=https://ec2.us-east-1.amazonaws.com
 export EC2_PRIVATE_KEY=$HOME/.ec2/pk-YBSJD3UQADEXGEX5SRTVJQBLAU3S23A5.pem
 export EC2_CERT=$HOME/.ec2/cert-YBSJD3UQADEXGEX5SRTVJQBLAU3S23A5.pem
 
+# Ruby garbage collection stuff
+export RUBY_HEAP_MIN_SLOTS=500000
+export RUBY_HEAP_SLOTS_INCREMENT=250000
+export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
+export RUBY_GC_MALLOC_LIMIT=50000000
+
 # Rubunius in 1.9 mode
 export RBXOPT=-X19
 
