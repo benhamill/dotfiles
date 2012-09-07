@@ -5,7 +5,7 @@
   st = status
   co = checkout
   b = branch
-  l = log --pretty=format:'%C(yellow)%H%C(reset) %C(blue)%an%C(reset) %C(green)(%cr)%C(reset) - %s'
+  l = log -n10 --pretty=format:'%C(yellow)%H%C(reset) %C(blue)%an%C(reset) %C(green)(%cr)%C(reset) - %s'
   p = pull --prune
 [core]
   excludesfile = ~/.gitignore
