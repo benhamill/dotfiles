@@ -37,6 +37,9 @@ if has("autocmd")
   autocmd BufWritePost .vimrc source $MYVIMRC
 endif
 
+" Just... know where 80 characters is.
+set colorcolumn=80
+
 " For showing hidden characters
 set list listchars=tab:▸\ ,trail:•
 
