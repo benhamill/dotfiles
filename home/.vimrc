@@ -3,6 +3,7 @@ call pathogen#infect()
 call pathogen#helptags()
 
 runtime macros/matchit.vim
+set runtimepath+=$GOROOT/misc/vim
 
 set nocompatible
 
@@ -24,6 +25,7 @@ if has("autocmd")
   autocmd Filetype text setlocal tw=80 formatoptions+=a spell
   autocmd BufNewFile,BufRead *.md set filetype=markdown syntax=markdown
   autocmd Filetype markdown setlocal spell
+  autocmd Filetype go setlocal ts=4 sts=4 sw=4 noexpandtab
 
   " Syntax highlighting for pig files
   autocmd BufNewFile,BufRead *.pig set filetype=pig syntax=pig

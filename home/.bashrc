@@ -118,6 +118,10 @@ fi
 # OHGOD use vi bindings
 set -o vi
 
+# Use go as a normal user
+export GOPATH=~/go
+export PATH=$PATH:$GOPATH/bin
+
 # personal binaries should be in the path.
 export PATH="$HOME/bin:$PATH"
 
@@ -149,9 +153,6 @@ export RUBY_GC_MALLOC_LIMIT=50000000
 
 # Rubunius in 1.9 mode
 export RBXOPT=-X19
-
-# Use go as a normal user
-export GOPATH=~/go
 
 fi # Close the if started on line 1.
 
