@@ -38,7 +38,7 @@ if has("autocmd")
 endif
 
 " Just... know where 80 characters is.
-set colorcolumn=80
+set colorcolumn=81
 
 " For showing hidden characters
 set list listchars=tab:▸\ ,trail:•
