@@ -67,3 +67,6 @@
 [submodule "home/.vim/bundle/golang"]
 	path = home/.vim/bundle/golang
 	url = git://github.com/jnwhiteh/vim-golang.git
+[submodule "home/.vim/bundle/ag"]
+	path = home/.vim/bundle/ag
+	url = git://github.com/epmatsw/ag.vim.git
