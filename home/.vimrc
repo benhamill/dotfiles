@@ -24,7 +24,7 @@ if has("autocmd")
   autocmd FileType python setlocal ts=4 sts=4 sw=4 expandtab
   autocmd Filetype text setlocal tw=80 formatoptions+=a spell
   autocmd BufNewFile,BufRead *.md set filetype=markdown syntax=markdown
-  autocmd Filetype markdown setlocal spell
+  autocmd Filetype markdown setlocal spell tw=80
   autocmd Filetype go setlocal ts=4 sts=4 sw=4 noexpandtab
 
   " Syntax highlighting for pig files
