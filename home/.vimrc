@@ -115,7 +115,7 @@ set completeopt=menu,preview,longest
 set wildmode=longest:full
 
 set laststatus=2
-" set statusline=%f%(\ %M%)%(\ %R%)%(\ %W%)%(\ %y%)%=%-14.(%l,%c%V%)\ %P
+set statusline=%f%(\ %M%)%(\ %R%)%(\ %W%)%(\ %y%)%=%-14.(%l,%c%V%)\ %P
 
 set ai
 set cpoptions+=$
