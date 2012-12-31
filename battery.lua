@@ -73,9 +73,17 @@ function batteryInfo(adapter)
 
   batterywidget:set_markup(spacer.."Bat:"..spacer..battery..spacer)
 
-  fcur:close()
-  fcap:close()
-  fsta:close()
+  if fcur then
+    fcur:close()
+  end
+
+  if fcap then
+    fcap:close()
+  end
+
+  if fsta then
+    fsta:close()
+  end
 end
 
 batteryInfo("BAT0")
