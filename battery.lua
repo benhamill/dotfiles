@@ -7,7 +7,6 @@ batterywidget = wibox.widget.textbox()
 function batteryInfo(adapter)
   spacer = " "
 
-  -- ZOMG FIXME
   local fcur = io.open("/sys/class/power_supply/"..adapter.."/charge_now")
 
   if not fcur then
@@ -22,20 +21,24 @@ function batteryInfo(adapter)
 
   local fsta = io.open("/sys/class/power_supply/"..adapter.."/status")
 
-  local cur = 0
-  local cap = 1
-  local sta = ''
+  if not fcur or not fcap or not fsta then
+    batterywidget:set_markup(spacer.."Bat:"..spacer..'<span color="#dc322f">?!</span>'..spacer)
 
-  if fcur then
-    cur = fcur:read()
+    return
   end
 
-  if fcap then
-    cap = fcap:read()
-  end
+  local cur = fcur:read()
+  local cap = fcap:read()
+  local sta = fsta:read()
 
-  if fsta then
-    sta = fsta:read()
+  fcur:close()
+  fcap:close()
+  fsta:close()
+
+  if not cur or not cap or not sta then
+    batterywidget:set_markup(spacer.."Bat:"..spacer..'<span color="#dc322f">?!</span>'..spacer)
+
+    return
   end
 
   local battery = math.floor(cur * 100 / cap)
@@ -72,18 +75,6 @@ function batteryInfo(adapter)
   end
 
   batterywidget:set_markup(spacer.."Bat:"..spacer..battery..spacer)
-
-  if fcur then
-    fcur:close()
-  end
-
-  if fcap then
-    fcap:close()
-  end
-
-  if fsta then
-    fsta:close()
-  end
 end
 
 batteryInfo("BAT0")
