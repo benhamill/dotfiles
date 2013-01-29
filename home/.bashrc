@@ -154,6 +154,11 @@ export RUBY_GC_MALLOC_LIMIT=50000000
 # Rubunius in 1.9 mode
 export RBXOPT=-X19
 
+# z support
+if [ -f /etc/profile.d/z.sh ]; then
+    . /etc/profile.d/z.sh
+fi
+
 fi # Close the if started on line 1.
 
 eval `keychain --eval --agents ssh id_rsa`
