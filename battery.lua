@@ -44,15 +44,14 @@ function batteryInfo(adapter)
   local battery = math.floor(cur * 100 / cap)
 
   if sta:match("Charging") then
-    dir = "▲"
-    battery = "A/C ("..battery..'%'..")"
+    battery = "⚡"..battery..'%'
 
-    battery = '<span color="#5f8700">'..battery..dir.."</span>"
+    battery = '<span color="#5f8700">'..battery.."</span>"
   elseif sta:match("Discharging") then
     dir = "▼"
 
     if tonumber(battery) > 25 and tonumber(battery) < 75 then
-      battery = '<span color="#af8700">'..battery..'%'..dir.."</span>"
+      battery = '<span color="#af8700">'..dir..battery..'%'.."</span>"
     elseif tonumber(battery) < 25 then
       if tonumber(battery) < 10 then
         naughty.notify({ title      = "Battery Warning"
@@ -63,15 +62,12 @@ function batteryInfo(adapter)
                        , bg         = beautiful.bg_focus
                        })
       end
-      battery = '<span color="#d70000">'..battery..'%'..dir.."</span>"
+      battery = '<span color="#d70000">'..dir..battery..'%'.."</span>"
     else
-      battery = '<span color="#5f8700">'..battery..'%'..dir.."</span>"
+      battery = '<span color="#5f8700">'..dir..battery..'%'.."</span>"
     end
   else
-    dir = "⚡"
-    battery = "A/C"
-
-    battery = '<span color="#5f8700">'..battery..dir.."</span>"
+    battery = '<span color="#5f8700">⚡</span>'
   end
 
   batterywidget:set_markup(spacer.."Bat:"..spacer..battery..spacer)
