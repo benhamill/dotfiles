@@ -22,7 +22,7 @@ function batteryInfo(adapter)
   local fsta = io.open("/sys/class/power_supply/"..adapter.."/status")
 
   if not fcur or not fcap or not fsta then
-    batterywidget:set_markup(spacer.."Bat:"..spacer..'<span color="#dc322f">?!</span>'..spacer)
+    batterywidget:set_markup(spacer..'<span color="#dc322f">?!</span>'..spacer)
 
     return
   end
@@ -36,7 +36,7 @@ function batteryInfo(adapter)
   fsta:close()
 
   if not cur or not cap or not sta then
-    batterywidget:set_markup(spacer.."Bat:"..spacer..'<span color="#dc322f">?!</span>'..spacer)
+    batterywidget:set_markup(spacer..'<span color="#dc322f">?!</span>'..spacer)
 
     return
   end
@@ -70,7 +70,7 @@ function batteryInfo(adapter)
     battery = '<span color="#5f8700">⚡</span>'
   end
 
-  batterywidget:set_markup(spacer.."Bat:"..spacer..battery..spacer)
+  batterywidget:set_markup(spacer..battery..spacer)
 end
 
 batteryInfo("BAT0")
