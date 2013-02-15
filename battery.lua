@@ -46,9 +46,10 @@ function batteryInfo(adapter)
   if sta:match("Charging") then
     battery = "⚡"..battery..'%'
 
-    battery = '<span color="#5f8700">'..battery.."</span>"
+    battery = '<span color="#00cc00">'..battery.."</span>"
   elseif sta:match("Discharging") then
-    dir = "▼"
+    dir = "⊝"
+    --dir = "▼"
 
     if tonumber(battery) > 25 and tonumber(battery) < 75 then
       battery = '<span color="#af8700">'..dir..battery..'%'.."</span>"
@@ -64,10 +65,11 @@ function batteryInfo(adapter)
       end
       battery = '<span color="#d70000">'..dir..battery..'%'.."</span>"
     else
-      battery = '<span color="#5f8700">'..dir..battery..'%'.."</span>"
+      battery = '<span color="#00cc00">'..dir..battery..'%'.."</span>"
     end
   else
-    battery = '<span color="#5f8700">⚡</span>'
+    battery = '<span color="#00cc00">⚡</span>'
+    --battery = '<span color="#5f8700">⚡</span>'
   end
 
   batterywidget:set_markup(spacer..battery..spacer)
