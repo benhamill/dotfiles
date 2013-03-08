@@ -22,6 +22,7 @@ if has("autocmd")
   " Syntax of these languages is fussy over tabs Vs spaces
   autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
   autocmd FileType python setlocal ts=4 sts=4 sw=4 expandtab
+  autocmd FileType php setlocal ts=4 sts=4 sw=4 noexpandtab
   autocmd Filetype text setlocal tw=80 formatoptions+=a spell
   autocmd BufNewFile,BufRead *.md set filetype=markdown syntax=markdown
   autocmd Filetype markdown setlocal spell tw=80
@@ -102,7 +103,7 @@ nmap <silent> <S-tab> :bp<cr>
 nmap <Leader>t :FufTaggedFile<CR>
 
 " Refresh CTags
-nmap <Leader>c :!ctags --exclude=doc --langmap=Ruby:+.haml.slim.erb --extra=+fq -R --langdef=scss --langmap=scss:.scss.sass.css .<CR><CR>
+nmap <Leader>c :!ctags --exclude=doc --langmap=Ruby:+.haml.slim.erb --langmap=php:+.inc --extra=+fq -R --langdef=scss --langmap=scss:.scss.sass.css .<CR><CR>
 
 set background=dark
 colorscheme solarized
