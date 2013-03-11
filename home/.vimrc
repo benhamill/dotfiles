@@ -105,6 +105,10 @@ nmap <Leader>t :FufTaggedFile<CR>
 " Refresh CTags
 nmap <Leader>c :!ctags --exclude=doc --langmap=Ruby:+.haml.slim.erb --langmap=php:+.inc --extra=+fq -R --langdef=scss --langmap=scss:.scss.sass.css .<CR><CR>
 
+" VERY MAGIC ALL THE TIME!
+nnoremap /  /\v
+cnoremap s/ s/\v
+
 set background=dark
 colorscheme solarized
 set number
