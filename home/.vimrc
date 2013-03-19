@@ -109,6 +109,15 @@ nmap <leader>c :!ctags --exclude=doc --langmap=Ruby:+.haml.slim.erb --langmap=ph
 nnoremap /  /\v
 cnoremap s/ s/\v
 
+" RCodeTools commands
+" Run one line
+map <silent> <leader>r !xmpfilter -a<cr>
+nmap <silent> <leader>r V<leader>r
+
+" Run whole buffer
+nmap <silent> <leader>R mzggVG!xmpfilter -a<cr>'z'
+
+
 set background=dark
 colorscheme solarized
 set number
