@@ -100,10 +100,10 @@ nmap <silent> <tab> :bn<cr>
 nmap <silent> <S-tab> :bp<cr>
 
 " FuzzyFinder Shortcuts
-nmap <Leader>t :FufTaggedFile<CR>
+nmap <leader>t :FufTaggedFile<CR>
 
 " Refresh CTags
-nmap <Leader>c :!ctags --exclude=doc --langmap=Ruby:+.haml.slim.erb --langmap=php:+.inc --extra=+fq -R --langdef=scss --langmap=scss:.scss.sass.css .<CR><CR>
+nmap <leader>c :!ctags --exclude=doc --langmap=Ruby:+.haml.slim.erb --langmap=php:+.inc --extra=+fq -R --langdef=scss --langmap=scss:.scss.sass.css .<CR><CR>
 
 " VERY MAGIC ALL THE TIME!
 nnoremap /  /\v
