@@ -8,6 +8,14 @@ super basic
 The repo is structured to play nicely with
 [homesick](http://rubygems.org/gems/homesick).
 
+## Homesicking It Up
+
+To symlink new files:
+
+```
+$ homesick symlink benhamill/dotfiles
+```
+
 ## License
 
 This program is free software. It comes without any warranty, to the extent
