@@ -136,7 +136,7 @@ set cpoptions+=$
 
 set tags=./tags;
 
-set pastetoggle=<Leader>`
+set pastetoggle=<C-\>
 
 set noswapfile
 set nobackup
