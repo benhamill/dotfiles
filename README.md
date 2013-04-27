@@ -10,10 +10,17 @@ The repo is structured to play nicely with
 
 ## Homesicking It Up
 
+First time:
+
+```
+gem install homesick
+homesick clone benhamill/dotfiles
+```
+
 To symlink new files:
 
 ```
-$ homesick symlink benhamill/dotfiles
+homesick symlink benhamill/dotfiles
 ```
 
 ## License
