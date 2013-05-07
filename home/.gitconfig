@@ -9,6 +9,7 @@
   p = pull --prune
 [core]
   excludesfile = ~/.gitignore
+	autocrlf = input
 [branch]
   autosetuprebase = always
 [color]
