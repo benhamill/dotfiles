@@ -76,3 +76,6 @@
 [submodule "home/.vim/bundle/keybaord_cat"]
 	path = home/.vim/bundle/keybaord_cat
 	url = git@github.com:natw/keyboard_cat.vim.git
+[submodule "home/.vim/bundle/detailed"]
+	path = home/.vim/bundle/detailed
+	url = git@github.com:rking/vim-detailed.git
