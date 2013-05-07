@@ -119,7 +119,7 @@ nmap <silent> <leader>R mzggVG!xmpfilter -a<cr>'z'
 
 
 set background=dark
-colorscheme solarized
+colorscheme detailed
 set number
 set nowrap
 set linebreak
