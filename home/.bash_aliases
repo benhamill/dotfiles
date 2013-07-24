@@ -8,7 +8,6 @@ alias bundlehash='echo "bundle && rbenv rehash" && bundle && rbenv rehash'
 
 alias packer='packer --auronly'
 
-alias irb=pry
 alias rpry='pry -r ./config/environment'
 
 alias git=hub
