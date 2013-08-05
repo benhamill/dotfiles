@@ -6,7 +6,7 @@ alias la='ls -a'
 alias be='bundle exec'
 alias bundlehash='echo "bundle && rbenv rehash" && bundle && rbenv rehash'
 
-alias packer='packer --auronly'
+alias packer='packer-color --auronly'
 
 alias rpry='pry -r ./config/environment'
 
