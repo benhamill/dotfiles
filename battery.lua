@@ -13,7 +13,11 @@ function batteryInfo(adapter)
     fcur = io.open("/sys/class/power_supply/"..adapter.."/energy_now")
   end
 
-  local fcap = io.open("/sys/class/power_supply/"..adapter.."/charge_full")
+  local fcap = io.open("/sys/class/power_supply/"..adapter.."/charge_full_design")
+
+  if not fcap then
+    local fcap = io.open("/sys/class/power_supply/"..adapter.."/charge_full")
+  end
 
   if not fcap then
     fcap = io.open("/sys/class/power_supply/"..adapter.."/energy_full")
