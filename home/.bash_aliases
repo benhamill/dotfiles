@@ -22,7 +22,7 @@ function gfb() {
   git checkout master && git pull --prune
 
   if [[ $1 == '--force' || -z `git branch --no-merged master | grep $branch` ]]; then
-    git branch -d $branch # && git push origin :$branch
+    git branch -D $branch # && git push origin :$branch
   else
     echo "Hey, man, $branch isn't merged yet!"
     git checkout $branch
