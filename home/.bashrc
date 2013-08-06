@@ -129,9 +129,6 @@ export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
-# make sure bundle's binstubs are first in the PATH.
-export PATH="./bin:$PATH"
-
 export EDITOR="vim"
 
 if [[ $(which google-chrome 2> /dev/null) ]]; then
