@@ -26,7 +26,7 @@ function batteryInfo()
                      })
     end
 
-    if tonumber(battery_load) < 25 then -- almost out
+    if not battery_load or tonumber(battery_load) < 25 then -- almost out
       color = '#dc322f' -- red
     elseif tonumber(battery_load) < 75 then -- middle charged
       color = '#af8700' -- yellow
