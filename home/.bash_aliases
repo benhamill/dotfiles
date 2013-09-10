@@ -4,11 +4,8 @@ alias ll='ls -l'
 alias la='ls -a'
 
 alias be='bundle exec'
-alias bundlehash='echo "bundle && rbenv rehash" && bundle && rbenv rehash'
 
 alias packer='packer-color --auronly'
-
-alias rpry='pry -r ./config/environment'
 
 alias git=hub
 
