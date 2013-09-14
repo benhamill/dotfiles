@@ -10,7 +10,7 @@ SUBTLE="\[\e[1;32m\]"
 NORMAL="\[\e[0m\]"
 
 function parse_git_branch {
-  git_status="$(git status 2> /dev/null)"
+  git_status="$(command git status 2> /dev/null)"
   pattern="^# On branch ([^${IFS}]*)"
   status=${git_status}
 
