@@ -17,6 +17,8 @@
   status = true
 [merge]
   tool = vimdiff
+[pull]
+  default = current
 [push]
   default = current
 [github]
