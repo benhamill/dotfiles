@@ -1,6 +1,6 @@
 XTerm*FaceName: DejaVu Sans Mono
 XTerm*FaceSize: 9
-! XTerm*FaceSize: 15
+! XTerm*FaceSize: 13
 XTerm*SaveLines: 9999
 
 !! drop in Solarized colorscheme for Xresources/Xdefaults

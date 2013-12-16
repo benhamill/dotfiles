@@ -105,6 +105,9 @@ nmap <leader>t :FufTaggedFile<CR>
 " Refresh CTags
 nmap <leader>c :!ctags --exclude=doc --langmap=Ruby:+.haml.slim.erb --langmap=php:+.inc --extra=+fq -R --langdef=scss --langmap=scss:.scss.sass.css .<CR><CR>
 
+" Convert => to : in ruby hashes
+nnoremap <Leader>: :%s/:\([^ ]*\)\(\s*\)=>/\1:/gc<CR>
+
 " VERY MAGIC ALL THE TIME!
 nnoremap /  /\v
 cnoremap s/ s/\v
@@ -142,6 +145,7 @@ set noswapfile
 set nobackup
 
 let g:CommandTMaxFiles=30000
+let g:markdown_fenced_languages = ['ruby', 'sh', 'javascript', 'vim']
 
 " Don't beep and don't flash. Bleh!
 set noeb vb t_vb=
