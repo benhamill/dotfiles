@@ -79,3 +79,6 @@
 [submodule "home/.vim/bundle/detailed"]
 	path = home/.vim/bundle/detailed
 	url = git@github.com:rking/vim-detailed.git
+[submodule "home/.vim/bundle/puppet-syntax"]
+	path = home/.vim/bundle/puppet-syntax
+	url = https://github.com/puppetlabs/puppet-syntax-vim.git
