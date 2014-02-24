@@ -1,1 +1,1 @@
-gem: --without-user-install --no-user-install
+gem: --without-user-install --no-user-install --no-document
