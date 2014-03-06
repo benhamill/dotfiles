@@ -143,7 +143,6 @@ export EC2_PRIVATE_KEY=$HOME/.ec2/pk-YBSJD3UQADEXGEX5SRTVJQBLAU3S23A5.pem
 export EC2_CERT=$HOME/.ec2/cert-YBSJD3UQADEXGEX5SRTVJQBLAU3S23A5.pem
 
 # Ruby garbage collection stuff
-export RUBY_HEAP_MIN_SLOTS=500000
 export RUBY_GC_HEAP_INIT_SLOTS=500000
 export RUBY_HEAP_SLOTS_INCREMENT=250000
 export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
@@ -155,6 +154,9 @@ export RBXOPT=-X19
 # z support
 if [ -f /etc/profile.d/z.sh ]; then
     . /etc/profile.d/z.sh
+fi
+if [ -f /usr/lib/z.sh ]; then
+    . /usr/lib/z.sh
 fi
 
 fi # Close the if started on line 1.

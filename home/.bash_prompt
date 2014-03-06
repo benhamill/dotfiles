@@ -11,7 +11,7 @@ NORMAL="\[\e[0m\]"
 
 function parse_git_branch {
   git_status="$(command git status 2> /dev/null)"
-  pattern="^# On branch ([^${IFS}]*)"
+  pattern="^On branch ([^${IFS}]*)"
   status=${git_status}
 
   if [[ $status =~ ${pattern} ]]; then
