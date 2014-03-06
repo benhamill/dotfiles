@@ -82,3 +82,6 @@
 [submodule "home/.vim/bundle/puppet-syntax"]
 	path = home/.vim/bundle/puppet-syntax
 	url = https://github.com/puppetlabs/puppet-syntax-vim.git
+[submodule "home/.vim/bundle/projectile"]
+	path = home/.vim/bundle/projectile
+	url = git://github.com/tpope/vim-projectile.git
