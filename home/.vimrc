@@ -147,6 +147,14 @@ set nobackup
 
 let g:CommandTMaxFiles=30000
 let g:markdown_fenced_languages = ['ruby', 'sh', 'javascript', 'vim']
+" let g:projectiles = {
+"       \   "*.gemspec": {
+"       \     "lib/%s/*.rb": { "command": "lib" },
+"       \     "lib/%s.rb": { "command": "lib" },
+"       \     "spec/*": { "command": "spec" },
+"       \     "spec/spec_helper.rb": { "command": "spec" }
+"       \   }
+"       \ }
 
 " Don't beep and don't flash. Bleh!
 set noeb vb t_vb=
