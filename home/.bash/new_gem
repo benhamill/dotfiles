@@ -1,0 +1,138 @@
+#!/usr/bin/env ruby
+
+require 'pry'
+require 'active_support/inflector'
+
+gem_name = ARGV[0]
+
+`bundle gem -t rspec #{gem_name}`
+
+Dir.chdir "./#{gem_name}"
+
+gemspec_path = "./#{gem_name}.gemspec"
+gemspec = File.read(gemspec_path)
+gemspec.gsub!(
+  /  spec.homepage.*/,
+  %Q{  spec.homepage      = "https://github.com/benhamill/#{gem_name}#readme"}
+)
+
+lines = gemspec.lines
+
+last = lines.pop
+
+lines << %Q{  spec.add_development_dependency "pry"\n}
+lines << last
+
+gemspec = lines.join
+
+File.open(gemspec_path, 'w') do |f|
+  f.puts gemspec
+end
+
+File.open("./README.md", 'w') do |f|
+  f.puts <<-README
+# #{gem_name.titleize}
+
+TODO: Write a gem description
+
+## Usage
+
+TODO: Write usage instructions here
+
+## Contributing
+
+If you'd like to contribute, please see the [contribution guidelines](CONTRIBUTING.md).
+
+## Releasing
+
+Maintainers: Please make sure to follow the [release steps](RELEASING.md) when
+it's time to cut a new release.
+README
+end
+
+File.open("./CONTRIBUTING.md", 'w') do |f|
+  f.puts <<-CONTRIBUTING
+# Contributing
+
+Help is gladly welcomed. If you have a feature you'd like to add, it's much more
+likely to get in (or get in faster) the closer you stick to these steps:
+
+1. Open an Issue to talk about it. We can discuss whether it's the right
+  direction or maybe help track down a bug, etc.
+1. Fork the project, and make a branch to work on your feature/fix. Master is
+  where you'll want to start from.
+1. Turn the Issue into a Pull Request. There are several ways to do this, but
+  [hub](https://github.com/defunkt/hub) is probably the easiest.
+1. Make sure your Pull Request includes tests.
+1. Bonus points if your Pull Request updates `CHANGES.md` to include a summary
+   of your changes and your name like the other entries. If the last entry is
+   the last release, add a new `## Unreleased` heading.
+1. *Do not* rev the version number in your pull request.
+
+If you don't know how to fix something, even just a Pull Request that includes a
+failing test can be helpful. If in doubt, make an Issue to discuss.
+CONTRIBUTING
+end
+
+
+File.open("./RELEASING.md", 'w') do |f|
+  f.puts <<-RELEASING
+## Releasing
+
+If you want to push a new version of this gem, do this:
+
+1. Ideally, every Pull Request should already have included an addition to the
+   `CHANGES.md` file summarizing the changes and crediting the author(s). It
+   doesn't hurt to review this to see if anything needs adding.
+1. Commit any changes you make.
+1. Go into version.rb and bump the version number
+   [as appopriate](http://semver.org/).
+1. Go into CHANGES.md and change the "Unlreleased" heading to match the new
+   version number.
+1. Commit these changes with a message like, "Minor version bump," or similar.
+1. Run `rake release`.
+1. High five someone nearby.
+RELEASING
+end
+
+File.open("./.projections.json", 'w') do |f|
+  f.puts <<-PROJECTIONS
+{
+  "lib/#{gem_name}/*.rb": { "command": "lib" },
+  "lib/#{gem_name}.rb": { "command": "lib" },
+  "spec/*": { "command": "spec" },
+  "spec/spec_helper.rb": { "command": "spec" }
+}
+PROJECTIONS
+end
+
+`rm spec/spec_helper.rb`
+`rspec --init`
+
+spec_helper = File.read('./spec/spec_helper.rb')
+lines = spec_helper.lines
+
+last = lines.pop
+lines << <<-SPEC_HELPER
+
+  config.expect_with :rspec do |expectations|
+    expectations.syntax = :expect
+  end
+
+  config.mock_with :rspec do |mocks|
+    mocks.syntax = :expect
+  end
+SPEC_HELPER
+lines << last
+lines << <<-SPEC_HELPER
+
+require 'pry'
+require '#{gem_name}'
+SPEC_HELPER
+
+
+File.open('./spec/spec_helper.rb', 'w') do |f|
+  f.puts lines.join
+end
+
+`git add .`

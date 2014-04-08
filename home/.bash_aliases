@@ -29,3 +29,7 @@ function gfb() {
 function rails_personal() {
   rails new $* --skip-bundle --database=postgresql --skip-test-unit --template=https://raw.github.com/benhamill/omakase/master/hamill_time.rb
 }
+
+function new_gem() {
+  ~/.bash/new_gem $*
+}
