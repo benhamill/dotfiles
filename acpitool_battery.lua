@@ -62,3 +62,8 @@ battimer:connect_signal("timeout", function()
   batteryInfo()
 end)
 battimer:start()
+
+    -- Stick this in the key section for easy locking.
+    -- Custom
+    awful.key({ modkey, "Control" }, "Return", function () awful.util.spawn("slimlock") end)
+
