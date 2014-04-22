@@ -9,6 +9,6 @@ add Lock = Caps_Lock
 add Control = Control_L
 
 !
-! Natural scrolling
+! Natural scrolling for mouse
 !
-! pointer = 1 2 3 5 4 7 6 8 9 10 11 12
+pointer = 1 2 3 5 4 7 6 8 9 10 11 12
