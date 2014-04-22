@@ -20,7 +20,7 @@ homesick clone benhamill/dotfiles
 To symlink new files:
 
 ```
-homesick symlink benhamill/dotfiles
+homesick symlink dotfiles
 ```
 
 ## License
