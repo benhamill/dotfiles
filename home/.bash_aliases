@@ -33,3 +33,7 @@ function rails_personal() {
 function new_gem() {
   ~/.bash/new_gem $*
 }
+
+function gem_projection() {
+  ~/.bash/gem_projection $*
+}
