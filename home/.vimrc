@@ -22,7 +22,7 @@ if has("autocmd")
   " Syntax of these languages is fussy over tabs Vs spaces
   autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
   autocmd FileType python setlocal ts=4 sts=4 sw=4 expandtab
-  autocmd FileType php setlocal ts=4 sts=4 sw=4 noexpandtab
+  autocmd FileType php setlocal ts=4 sts=4 sw=4 expandtab
   autocmd Filetype text setlocal tw=80 formatoptions+=a spell
   autocmd BufNewFile,BufRead *.md set filetype=markdown syntax=markdown
   autocmd Filetype markdown setlocal spell tw=80
