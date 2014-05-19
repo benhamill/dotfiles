@@ -37,3 +37,11 @@ function new_gem() {
 function gem_projection() {
   ~/.bash/gem_projection $*
 }
+
+function pair_term() {
+  echo "XTerm*FaceSize: 13" | xrdb -merge -
+}
+
+function solo_term() {
+  echo "XTerm*FaceSize: 9" | xrdb -merge -
+}
