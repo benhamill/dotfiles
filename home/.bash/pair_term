@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+echo "XTerm*FaceSize: 13" | xrdb -merge -
