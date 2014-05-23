@@ -45,3 +45,7 @@ function pair_term() {
 function solo_term() {
   echo "XTerm*FaceSize: 9" | xrdb -merge -
 }
+
+function raw_imap() {
+  openssl s_client -connect $1 -crlf
+}
