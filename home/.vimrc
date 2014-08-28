@@ -20,6 +20,7 @@ set ts=4 sts=2 sw=2 expandtab
 " Only do this part when compiled with support for autocommands
 if has("autocmd")
   " Syntax of these languages is fussy over tabs Vs spaces
+  autocmd BufNewFile,BufRead *.jbuilder set filetype=ruby
   autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
   autocmd FileType python setlocal ts=4 sts=4 sw=4 expandtab
   autocmd FileType php setlocal ts=4 sts=4 sw=4 expandtab
