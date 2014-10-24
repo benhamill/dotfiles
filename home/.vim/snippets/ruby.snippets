@@ -6,7 +6,11 @@ snippet it
 	  ${2}
 	end
 snippet desc
-	describe ${1:"some object or method"} do
+	describe ${1:"some method or case"} do
+		${2}
+	end
+snippet rdesc
+	RSpec.describe ${1:"some object"} do
 		${2}
 	end
 snippet {
