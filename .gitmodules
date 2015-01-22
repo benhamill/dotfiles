@@ -85,3 +85,9 @@
 [submodule "home/.vim/bundle/projectile"]
 	path = home/.vim/bundle/projectile
 	url = git://github.com/tpope/vim-projectile.git
+[submodule "home/.vim/bundle/tlib"]
+	path = home/.vim/bundle/tlib
+	url = https://github.com/tomtom/tlib_vim.git
+[submodule "home/.vim/bundle/addon-mw-utils"]
+	path = home/.vim/bundle/addon-mw-utils
+	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
