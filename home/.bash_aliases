@@ -43,7 +43,7 @@ function pair_term() {
 }
 
 function solo_term() {
-  echo "XTerm*FaceSize: 9" | xrdb -merge -
+  echo "XTerm*FaceSize: 11" | xrdb -merge -
 }
 
 function raw_imap() {
