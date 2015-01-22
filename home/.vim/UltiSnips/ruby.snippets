@@ -1,3 +1,30 @@
+
+snippet {
+{${1: |${2}|} ${3} 
+endsnippet
+
+snippet do
+do${1: |${2}|}
+	${3}
+end
+endsnippet
+
+snippet |
+|${1:args}|${2}
+endsnippet
+
+snippet bp
+binding.pry
+endsnippet
+
+
+# RSpec snippets
+snippet rdesc
+RSpec.describe ${1:"some object"} do
+	${2}
+end
+endsnippet
+
 snippet it
 it "${1:behaves in some way}" do
 	${2}
@@ -10,16 +37,6 @@ describe ${1:"some method or case"} do
 end
 endsnippet
 
-snippet rdesc
-RSpec.describe ${1:"some object"} do
-	${2}
-end
-endsnippet
-
-snippet {
-{ ${1} 
-endsnippet
-
 snippet con
 context "${1:doing something}" do
 ${2}
@@ -30,18 +47,4 @@ snippet bef
 before do
 	${1}
 end
-endsnippet
-
-snippet d
-do
-	${1}
-end
-endsnippet
-
-snippet |
-|${1:args}| ${2}
-endsnippet
-
-snippet bp
-binding.pry
 endsnippet

@@ -151,5 +151,7 @@ set nobackup
 let g:CommandTMaxFiles=30000
 let g:markdown_fenced_languages = ['ruby', 'sh', 'javascript', 'vim']
 
+let g:UltiSnipsEditSplit = 'context'
+
 " Don't beep and don't flash. Bleh!
 set noeb vb t_vb=
