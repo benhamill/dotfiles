@@ -1,0 +1,47 @@
+snippet it
+it "${1:behaves in some way}" do
+	${2}
+end
+endsnippet
+
+snippet desc
+describe ${1:"some method or case"} do
+	${2}
+end
+endsnippet
+
+snippet rdesc
+RSpec.describe ${1:"some object"} do
+	${2}
+end
+endsnippet
+
+snippet {
+{ ${1} 
+endsnippet
+
+snippet con
+context "${1:doing something}" do
+${2}
+end
+endsnippet
+
+snippet bef
+before do
+	${1}
+end
+endsnippet
+
+snippet d
+do
+	${1}
+end
+endsnippet
+
+snippet |
+|${1:args}| ${2}
+endsnippet
+
+snippet bp
+binding.pry
+endsnippet
