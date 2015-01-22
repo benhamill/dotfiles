@@ -91,3 +91,6 @@
 [submodule "home/.vim/bundle/addon-mw-utils"]
 	path = home/.vim/bundle/addon-mw-utils
 	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
+[submodule "home/.vim/bundle/ultisnips"]
+	path = home/.vim/bundle/ultisnips
+	url = git@github.com:SirVer/ultisnips.git
