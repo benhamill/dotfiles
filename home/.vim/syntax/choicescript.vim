@@ -19,6 +19,7 @@ syn match choicescriptChoice '\*fake_choice'
 syn match choicescriptCommands '\*disable_reuse'
 syn match choicescriptCommands '\*set'
 syn match choicescriptCommands '\*page_break'
+syn match choicescriptCommands '\*line_break'
 
 syn match choicescriptSetup '\*title'
 syn match choicescriptSetup '\*author'
