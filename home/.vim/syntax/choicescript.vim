@@ -6,7 +6,6 @@ if exists("b:current_syntax")
     finish
 endif
 
-runtime! syntax/html.vim
 unlet! b:current_syntax
 
 syn match choicescriptComments '\*comment .*$'
@@ -28,6 +27,7 @@ syn match choicescriptCommands '\*page_break'
 syn match choicescriptCommands '\*line_break'
 syn match choicescriptCommands '\*return'
 syn match choicescriptCommands '\*stat_chart'
+syn match choicescriptCommands '\*finish'
 
 syn match choicescriptSetup '\*title'
 syn match choicescriptSetup '\*author'
