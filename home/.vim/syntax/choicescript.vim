@@ -26,6 +26,8 @@ syn match choicescriptCommands '\*set'
 syn match choicescriptCommands '\*temp'
 syn match choicescriptCommands '\*page_break'
 syn match choicescriptCommands '\*line_break'
+syn match choicescriptCommands '\*return'
+syn match choicescriptCommands '\*stat_chart'
 
 syn match choicescriptSetup '\*title'
 syn match choicescriptSetup '\*author'
