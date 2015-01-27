@@ -42,6 +42,9 @@ syn match choicescriptLabels '\*gosub_scene'
 
 syn match choicescriptError '\*bug'
 
+syn keyword choicescriptBoolean true
+syn keyword choicescriptBoolean false
+
 syn region choicescriptInterpolation start="\$!\?{" skip="\\}" end="}"
 
 hi def link choicescriptComments        Comment
@@ -53,5 +56,6 @@ hi def link choicescriptConditional     Conditional
 hi def link choicescriptError           Exception
 hi def link choicescriptInterpolation   Statement
 hi def link choicescriptSetup           PreProc
+hi def link choicescriptBoolean         Boolean
 
 let b:current_syntax = "choicescript"
