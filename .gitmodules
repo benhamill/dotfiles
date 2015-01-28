@@ -94,3 +94,6 @@
 [submodule "home/.vim/bundle/ultisnips"]
 	path = home/.vim/bundle/ultisnips
 	url = git@github.com:SirVer/ultisnips.git
+[submodule "home/.vim/bundle/snippets"]
+	path = home/.vim/bundle/snippets
+	url = git@github.com:honza/vim-snippets.git
