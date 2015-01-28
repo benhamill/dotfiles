@@ -1,7 +1,6 @@
 #!/bin/bash
 alias ls='ls --color'
-alias ll='ls -l'
-alias la='ls -a'
+alias ll='ls -lAF'
 
 alias be='bundle exec'
 
