@@ -132,7 +132,7 @@ eval "$(rbenv init -)"
 export EDITOR="vim"
 
 if [[ $(which google-chrome-stable 2> /dev/null) ]]; then
-  export BROWSER="google-chrome"
+  export BROWSER="google-chrome-stable"
 else
   export BROWSER=""
 fi
