@@ -131,10 +131,10 @@ eval "$(rbenv init -)"
 
 export EDITOR="vim"
 
-if [[ $(which google-chrome 2> /dev/null) ]]; then
+if [[ $(which google-chrome-stable 2> /dev/null) ]]; then
   export BROWSER="google-chrome"
 else
-  export BROWSER="chromium"
+  export BROWSER=""
 fi
 
 export EC2_KEYPAIR=bencos
