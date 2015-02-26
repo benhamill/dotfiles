@@ -97,3 +97,6 @@
 [submodule "home/.vim/bundle/snippets"]
 	path = home/.vim/bundle/snippets
 	url = git@github.com:honza/vim-snippets.git
+[submodule "home/.vim/bundle/textobj-python"]
+	path = home/.vim/bundle/textobj-python
+	url = git@github.com:bps/vim-textobj-python.git
