@@ -105,13 +105,17 @@ nmap <silent> <tab> :bn<cr>
 nmap <silent> <S-tab> :bp<cr>
 
 " FuzzyFinder Shortcuts
-nmap <leader>t :FufTaggedFile<CR>
+" nmap <leader>t :FufTaggedFile<CR>
 
 " Refresh CTags
 nmap <leader>c :!ctags --exclude=doc --langmap=Ruby:+.haml.slim.erb --langmap=php:+.inc --extra=+fq -R --langdef=scss --langmap=scss:.scss.sass.css .<CR><CR>
 
 " Convert => to : in ruby hashes
 nnoremap <Leader>: :%s/:\([^ ]*\)\(\s*\)=>/\1:/gc<CR>
+
+" CtrlP changes
+let g:ctrlp_map = ''
+nmap <silent> <leader>t :CtrlPMixed<cr>
 
 " VERY MAGIC ALL THE TIME!
 nnoremap /  /\v

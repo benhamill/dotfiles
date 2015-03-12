@@ -100,3 +100,6 @@
 [submodule "home/.vim/bundle/textobj-python"]
 	path = home/.vim/bundle/textobj-python
 	url = git@github.com:bps/vim-textobj-python.git
+[submodule "home/.vim/bundle/ctrlp"]
+	path = home/.vim/bundle/ctrlp
+	url = https://github.com/kien/ctrlp.vim.git
