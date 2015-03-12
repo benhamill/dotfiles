@@ -149,10 +149,15 @@ set pastetoggle=<C-t>
 set noswapfile
 set nobackup
 
+" Delete even stuff that I didn't type just now
+set backspace=indent,eol,start
+
 let g:CommandTMaxFiles=30000
 let g:markdown_fenced_languages = ['ruby', 'sh', 'javascript', 'vim']
 
 let g:UltiSnipsEditSplit = 'context'
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<shift-tab>"
 
 " Don't beep and don't flash. Bleh!
 set noeb vb t_vb=
