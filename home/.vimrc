@@ -24,7 +24,8 @@ if has("autocmd")
   autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
   autocmd FileType python setlocal ts=4 sts=4 sw=4 expandtab
   autocmd FileType php setlocal ts=4 sts=4 sw=4 expandtab
-  autocmd Filetype text setlocal tw=80 formatoptions+=a spell
+  autocmd Filetype text setlocal tw=80 spell
+  " autocmd Filetype text setlocal tw=80 formatoptions+=a spell
   autocmd Filetype choicescript setlocal tw=80 spell formatoptions-=a ts=4 sts=4 sw=4 expandtab
   autocmd Filetype help setlocal nospell
   autocmd BufNewFile,BufRead *.md set filetype=markdown syntax=markdown
@@ -94,7 +95,7 @@ nmap <silent> <leader>nt :NERDTreeToggle<cr>
 " Sort files and directories mixed up.
 let NERDTreeSortOrder=['*', '^[A-Z]', '^README*', '^Gemfile']
 let NERDTreeDirArrows=1
-let NERDTreeIgnore=['^tags$', '^Gemfile\.lock$', '\~$']
+let NERDTreeIgnore=['^tags$', '^Gemfile\.lock$', '\~$', '\.pyc$']
 
 " Map ctrl-n and ctrl-p to :cn and :cp respectively.
 nmap <silent> <C-n> :cn<cr>
@@ -157,9 +158,10 @@ set nobackup
 set backspace=indent,eol,start
 
 let g:CommandTMaxFiles=30000
-let g:markdown_fenced_languages = ['ruby', 'sh', 'javascript', 'vim']
+let g:markdown_fenced_languages = ['ruby', 'sh', 'javascript', 'vim', 'python', 'go']
 
 let g:UltiSnipsEditSplit = 'context'
+let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<shift-tab>"
 
