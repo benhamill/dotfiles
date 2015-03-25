@@ -13,7 +13,7 @@ HISTCONTROL=ignoredups:ignorespace
 shopt -s histappend
 
 # allow for ** globbing of directories
-shopt -s globstar
+# shopt -s globstar
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1000
@@ -73,6 +73,11 @@ esac
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+# If virtual env is a thing
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+    . /usr/local/bin/virtualenvwrapper.sh
+fi
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -141,7 +146,10 @@ fi
 if [ -f /usr/lib/z.sh ]; then
     . /usr/lib/z.sh
 fi
+if [ -f /usr/local/etc/profile.d/z.sh ]; then
+    . /usr/local/etc/profile.d/z.sh
+fi
 
 fi # Close the if started on line 1.
 
-eval `keychain --eval --agents ssh id_rsa`
+# eval `keychain --eval --agents ssh id_rsa`
