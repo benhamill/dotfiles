@@ -37,6 +37,10 @@ function gem_projection() {
   ~/.bash/gem_projection $*
 }
 
+function elixir_projection() {
+  ~/.bash/elixir_projection $*
+}
+
 function pair_term() {
   echo "XTerm*FaceSize: 13" | xrdb -merge -
 }

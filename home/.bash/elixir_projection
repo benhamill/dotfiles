@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+project_name = ARGV[0]
+
+File.open("./.projections.json", 'w') do |f|
+  f.puts <<-PROJECTIONS
+{
+  "lib/#{project_name}/*.ex": { "command": "lib" },
+  "lib/#{project_name}.ex": { "command": "lib" },
+  "test/*_test.exs": { "command": "test" },
+  "test/test_helper.exs": { "command": "test" }
+}
+PROJECTIONS
+end
