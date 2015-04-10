@@ -1,3 +1,9 @@
+snippet do
+do
+	${0:expression}
+end
+endsnippet
+
 snippet if
 if ${1:condition} do
 	${2:expression}
@@ -20,7 +26,7 @@ snippet iff
 if ${1:condition}, do: ${2:expression}${3:, else: ${4:expression}}
 endsnippet
 
-snippet unless
+snippet unlesss
 unless ${1:condition}, do: ${2:expression}${3:, else: ${4:expression}}
 endsnippet
 
@@ -46,6 +52,12 @@ endsnippet
 
 snippet fn "inline function" s
 fn ${1:${2:args} }-> ${0} end
+endsnippet
+
+snippet for
+for ${1:item} <- ${2:items}${3:, into: ${4:%{}}} do
+	${0}
+end
 endsnippet
 
 snippet cond "cond do" s
@@ -112,4 +124,8 @@ snippet test
 test "${1:behaves in some way}"${2:, %{${3:test_context}: ${4:dictionary}}} do
 	${0}
 end
+endsnippet
+
+snippet pry
+require IEx; IEx.pry
 endsnippet
