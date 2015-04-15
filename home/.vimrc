@@ -30,10 +30,10 @@ if has("autocmd")
   autocmd Filetype help setlocal nospell
   autocmd BufNewFile,BufRead *.md set filetype=markdown syntax=markdown
   autocmd Filetype markdown setlocal spell tw=80
-  autocmd BufNewFile,BufRead COMMIT_EDITMSG set filetype=markdown syntax=markdown
-  " autocmd Filetype gitcommit setlocal spell tw=72
+  autocmd Filetype gitcommit setlocal spell tw=72
   autocmd Filetype go setlocal ts=4 sts=4 sw=4 noexpandtab
   autocmd Filetype snippets setlocal ts=4 sts=4 sw=4 noexpandtab
+  autocmd Filetype json setlocal ts=4 sts=4 expandtab
 
   " Syntax highlighting for pig files
   autocmd BufNewFile,BufRead *.pig set filetype=pig syntax=pig
