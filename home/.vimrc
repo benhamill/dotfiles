@@ -23,6 +23,7 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.jbuilder set filetype=ruby
   autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
   autocmd FileType python setlocal ts=4 sts=4 sw=4 expandtab
+  autocmd FileType jinja setlocal ts=4 sts=4 sw=4 expandtab
   autocmd FileType php setlocal ts=4 sts=4 sw=4 expandtab
   autocmd Filetype text setlocal tw=80 spell
   " autocmd Filetype text setlocal tw=80 formatoptions+=a spell
