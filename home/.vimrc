@@ -35,6 +35,8 @@ if has("autocmd")
   autocmd Filetype go setlocal ts=4 sts=4 sw=4 noexpandtab
   autocmd Filetype snippets setlocal ts=4 sts=4 sw=4 noexpandtab
   autocmd Filetype json setlocal ts=4 sts=4 expandtab
+  autocmd BufNewFile,BufRead *.raml set filetype=raml syntax=raml
+  autocmd Filetype raml setlocal ts=4 sts=4 sw=4 expandtab
 
   " Syntax highlighting for pig files
   autocmd BufNewFile,BufRead *.pig set filetype=pig syntax=pig
