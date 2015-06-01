@@ -34,9 +34,7 @@ if has("autocmd")
   autocmd Filetype gitcommit setlocal spell tw=72
   autocmd Filetype go setlocal ts=4 sts=4 sw=4 noexpandtab
   autocmd Filetype snippets setlocal ts=4 sts=4 sw=4 noexpandtab
-  autocmd Filetype json setlocal ts=4 sts=4 expandtab
   autocmd BufNewFile,BufRead *.raml set filetype=raml syntax=raml
-  autocmd Filetype raml setlocal ts=4 sts=4 sw=4 expandtab
 
   " Syntax highlighting for pig files
   autocmd BufNewFile,BufRead *.pig set filetype=pig syntax=pig
@@ -109,9 +107,6 @@ nmap <silent> <C-p> :cp<cr>
 nmap <silent> <tab> :bn<cr>
 nmap <silent> <S-tab> :bp<cr>
 
-" FuzzyFinder Shortcuts
-" nmap <leader>t :FufTaggedFile<CR>
-
 " Refresh CTags
 nmap <leader>c :!ctags --exclude=doc --langmap=Ruby:+.haml.slim.erb --langmap=php:+.inc --extra=+fq -R --langdef=scss --langmap=scss:.scss.sass.css .<CR><CR>
 
@@ -120,7 +115,10 @@ nnoremap <Leader>: :%s/:\([^ ]*\)\(\s*\)=>/\1:/gc<CR>
 
 " CtrlP changes
 let g:ctrlp_map = ''
-nmap <silent> <leader>t :CtrlPMixed<cr>
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ }
+nmap <silent> <leader>t :CtrlP<cr>
 
 " VERY MAGIC ALL THE TIME!
 nnoremap /  /\v
