@@ -7,9 +7,6 @@
 [submodule "home/.vim/bundle/tcomment"]
 	path = home/.vim/bundle/tcomment
 	url = https://github.com/tomtom/tcomment_vim.git
-[submodule "home/.vim/bundle/autoclose"]
-	path = home/.vim/bundle/autoclose
-	url = https://github.com/vim-scripts/AutoClose.git
 [submodule "home/.vim/bundle/bufonly"]
 	path = home/.vim/bundle/bufonly
 	url = https://github.com/duff/vim-bufonly.git
