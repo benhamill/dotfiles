@@ -106,3 +106,6 @@
 [submodule "home/.vim/bundle/jinja"]
 	path = home/.vim/bundle/jinja
 	url = https://github.com/lepture/vim-jinja.git
+[submodule "home/.vim/bundle/autoclose"]
+	path = home/.vim/bundle/autoclose
+	url = git@github.com:Townk/vim-autoclose.git
