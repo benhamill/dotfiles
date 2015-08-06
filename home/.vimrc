@@ -33,7 +33,7 @@ if has("autocmd")
   autocmd Filetype markdown setlocal spell tw=80
   autocmd Filetype gitcommit setlocal spell tw=72
   autocmd Filetype go setlocal ts=4 sts=4 sw=4 noexpandtab
-  autocmd FileType go map <leader>r :!go run %<CR>
+  autocmd FileType go map <leader>r :GoRun<cr>
   autocmd Filetype snippets setlocal ts=4 sts=4 sw=4 noexpandtab
   autocmd BufNewFile,BufRead *.raml set filetype=yaml syntax=yaml
 
