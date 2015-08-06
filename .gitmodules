@@ -109,3 +109,6 @@
 [submodule "home/.vim/bundle/autoclose"]
 	path = home/.vim/bundle/autoclose
 	url = git@github.com:Townk/vim-autoclose.git
+[submodule "home/.vim/bundle/go"]
+	path = home/.vim/bundle/go
+	url = git@github.com:fatih/vim-go.git
