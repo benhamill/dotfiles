@@ -23,6 +23,7 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.jbuilder set filetype=ruby
   autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
   autocmd FileType python setlocal ts=4 sts=4 sw=4 expandtab
+  autocmd FileType jinja setlocal ts=4 sts=4 sw=4 expandtab
   autocmd FileType php setlocal ts=4 sts=4 sw=4 expandtab
   autocmd Filetype text setlocal tw=80 spell
   " autocmd Filetype text setlocal tw=80 formatoptions+=a spell
@@ -32,7 +33,9 @@ if has("autocmd")
   autocmd Filetype markdown setlocal spell tw=80
   autocmd Filetype gitcommit setlocal spell tw=72
   autocmd Filetype go setlocal ts=4 sts=4 sw=4 noexpandtab
+  autocmd FileType go map <leader>r :GoRun<cr>
   autocmd Filetype snippets setlocal ts=4 sts=4 sw=4 noexpandtab
+  autocmd BufNewFile,BufRead *.raml set filetype=yaml syntax=yaml
 
   " Syntax highlighting for pig files
   autocmd BufNewFile,BufRead *.pig set filetype=pig syntax=pig
@@ -105,9 +108,6 @@ nmap <silent> <C-p> :cp<cr>
 nmap <silent> <tab> :bn<cr>
 nmap <silent> <S-tab> :bp<cr>
 
-" FuzzyFinder Shortcuts
-" nmap <leader>t :FufTaggedFile<CR>
-
 " Refresh CTags
 nmap <leader>c :!ctags --exclude=doc --langmap=Ruby:+.haml.slim.erb --langmap=php:+.inc --extra=+fq -R --langdef=scss --langmap=scss:.scss.sass.css .<CR><CR>
 
@@ -116,7 +116,10 @@ nnoremap <Leader>: :%s/:\([^ ]*\)\(\s*\)=>/\1:/gc<CR>
 
 " CtrlP changes
 let g:ctrlp_map = ''
-nmap <silent> <leader>t :CtrlPMixed<cr>
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ }
+nmap <silent> <leader>t :CtrlP<cr>
 
 " VERY MAGIC ALL THE TIME!
 nnoremap /  /\v
