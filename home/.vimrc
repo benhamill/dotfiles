@@ -33,7 +33,12 @@ if has("autocmd")
   autocmd Filetype markdown setlocal spell tw=80
   autocmd Filetype gitcommit setlocal spell tw=72
   autocmd Filetype go setlocal ts=4 sts=4 sw=4 noexpandtab
-  autocmd FileType go map <leader>r :GoRun<cr>
+  autocmd FileType go map <leader>r <Plug>(go-run)
+  autocmd FileType go map <leader>t <Plug>(go-test)
+  autocmd FileType go map <leader>b <Plug>(go-build)
+  autocmd FileType go nmap <Leader>e <Plug>(go-rename)
+  autocmd FileType go nmap <Leader>gb <Plug>(go-doc-browser)
+  autocmd FileType go nmap <Leader>l :GoLint<cr>
   autocmd Filetype snippets setlocal ts=4 sts=4 sw=4 noexpandtab
   autocmd BufNewFile,BufRead *.raml set filetype=yaml syntax=yaml
 
@@ -44,6 +49,8 @@ if has("autocmd")
   autocmd FileType tsv setlocal noexpandtab
 
   autocmd BufNewFile,BufRead *.fish set filetype=fish syntax=fish
+
+  autocmd BufNewFile,BufRead *.avsc set filetype=json syntax=json
 
   " Automatically source my vimrc when I save it
   autocmd BufWritePost .vimrc source $MYVIMRC
