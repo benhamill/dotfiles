@@ -1,6 +1,29 @@
-runtime bundle/pathogen/autoload/pathogen.vim
-call pathogen#infect()
-call pathogen#helptags()
+call plug#begin('~/.vim/plugged')
+Plug 'SirVer/ultisnips'
+Plug 'Townk/vim-autoclose'
+Plug 'bps/vim-textobj-python'
+Plug 'cakebaker/scss-syntax.vim'
+Plug 'duff/vim-bufonly'
+Plug 'elixir-lang/vim-elixir'
+Plug 'epmatsw/ag.vim'
+Plug 'fatih/vim-go'
+Plug 'godlygeek/tabular'
+Plug 'honza/vim-snippets'
+Plug 'kana/vim-textobj-user'
+Plug 'kien/ctrlp.vim'
+Plug 'lepture/vim-jinja'
+Plug 'nelstrom/vim-textobj-rubyblock'
+Plug 'rking/vim-detailed'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'slim-template/vim-slim'
+Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-projectionist'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-surround'
+Plug 'vim-scripts/fish.vim'
+call plug#end()
 
 runtime macros/matchit.vim
 set runtimepath+=$GOROOT/misc/vim
