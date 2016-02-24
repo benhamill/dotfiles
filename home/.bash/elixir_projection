@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-project_name = ARGV[0]
+project_name = ARGV[0] || File.basename(Dir.getwd)
 
 File.open("./.projections.json", 'w') do |f|
   f.puts <<-PROJECTIONS

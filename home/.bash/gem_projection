@@ -1,12 +1,12 @@
 #!/usr/bin/env ruby
 
-gem_name = ARGV[0]
+project_name = ARGV[0] || File.basename(Dir.getwd)
 
 File.open("./.projections.json", 'w') do |f|
   f.puts <<-PROJECTIONS
 {
-  "lib/#{gem_name}/*.rb": { "command": "lib" },
-  "lib/#{gem_name}.rb": { "command": "lib" },
+  "lib/#{project_name}/*.rb": { "command": "lib" },
+  "lib/#{project_name}.rb": { "command": "lib" },
   "spec/*": { "command": "spec" },
   "spec/spec_helper.rb": { "command": "spec" }
 }
