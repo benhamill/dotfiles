@@ -1,2 +1,4 @@
 set editing-mode vi
 set bell-style none
+
+TAB: complete
