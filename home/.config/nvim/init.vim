@@ -7,8 +7,8 @@ call plug#end()
 
 set number nowrap nohlsearch noswapfile
 
-set colorcolumn=81 list listchars=tab:▸\ ,trail:•
-set winwidth=85
+" Set windows up
+set winwidth=85 colorcolumn=81 list listchars=tab:▸\ ,trail:•
 
 " Set up my statusline
 set statusline=%f%(\ %M%)%(\ %R%)%(\ %W%)%(\ %y%)%=%-14.(%l,%c%V%)\ %P
