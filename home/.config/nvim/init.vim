@@ -2,6 +2,7 @@
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'altercation/vim-colors-solarized'
 
 call plug#end()
 
@@ -12,6 +13,10 @@ set winwidth=85 colorcolumn=81 list listchars=tab:▸\ ,trail:•
 
 " Set up my statusline
 set statusline=%f%(\ %M%)%(\ %R%)%(\ %W%)%(\ %y%)%=%-14.(%l,%c%V%)\ %P
+
+" Colors
+set background=dark
+colorscheme solarized
 
 " Leader commands
 let mapleader=","
