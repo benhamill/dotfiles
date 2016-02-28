@@ -1,10 +1,12 @@
 " Install plugins with https://github.com/junegunn/vim-plug
 call plug#begin('~/.config/nvim/plugged')
 
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'altercation/vim-colors-solarized'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'Shougo/deoplete.nvim'
 
 call plug#end()
+
 
 set number nowrap nohlsearch noswapfile
 
@@ -18,7 +20,7 @@ set statusline=%f%(\ %M%)%(\ %R%)%(\ %W%)%(\ %y%)%=%-14.(%l,%c%V%)\ %P
 set background=dark
 colorscheme solarized
 
-" Leader commands
+
 let mapleader=","
 
 " Edit this file
@@ -33,3 +35,8 @@ nmap <C-h> <C-w>h
 nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
+
+
+" Deoplete settings
+let g:deoplete#enable_at_startup=1
+let g:deoplete#enable_smart_case=1
