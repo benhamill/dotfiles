@@ -60,6 +60,10 @@ nmap <silent> <leader>v :vsp $MYVIMRC<cr>
 nmap <silent> <tab> :bn<cr>
 nmap <silent> <S-tab> :bp<cr>
 
+" Map ctrl-n and ctrl-p to :cn and :cp respectively.
+nmap <silent> <C-n> :cn<cr>
+nmap <silent> <C-p> :cp<cr>
+
 
 " Easier window nav
 nmap <C-h> <C-w>h
