@@ -106,6 +106,8 @@ let g:neopairs#enable = 1
 " Markdown support
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd BufNewFile,BufReadPost *.md setlocal textwidth=80
+autocmd BufNewFile,BufReadPost *.markdown set filetype=markdown
+autocmd BufNewFile,BufReadPost *.markdown setlocal textwidth=80
 let g:markdown_fenced_languages = ['ruby', 'sh', 'javascript', 'vim', 'python', 'go', 'elixir']
 
 " NERDTree settings
