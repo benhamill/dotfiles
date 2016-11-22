@@ -1,15 +1,7 @@
-snippet {
-{${1: |${2}|} ${3} 
-endsnippet
-
 snippet do
-do${1: |${2}|}
-	${3}
+do
+	${1}
 end
-endsnippet
-
-snippet |
-|${1:args}|${2}
 endsnippet
 
 snippet bp
@@ -36,9 +28,9 @@ describe ${1:"some method or case"} do
 end
 endsnippet
 
-snippet con
-context "${1:doing something}" do
-${2}
+snippet cont
+context "${1:when something is true}" do
+	${2}
 end
 endsnippet
 

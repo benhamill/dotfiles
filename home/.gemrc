@@ -1,1 +1,9 @@
-gem: --without-user-install --no-user-install --no-document
+---
+:backtrace: false
+:bulk_threshold: 1000
+:sources:
+- https://rubygems.org/
+- https://maven-devtools-repo-prod.mfpaws.com:8443/
+:update_sources: true
+:verbose: true
+gem: "--without-user-install --no-user-install --no-document"

@@ -26,7 +26,7 @@ function parse_git_branch {
 }
 
 function parse_commit_status () {
-  if [[ "$1" =~ "working directory clean" ]]; then
+  if [[ "$1" =~ "working tree clean" ]]; then
     echo "${GREEN}"
   elif [[ "$1" =~ "Changes to be committed:" ]]; then
     echo "${YELLOW}"
@@ -63,4 +63,4 @@ function ps1_function {
   # export PS1="${MAGENTA}●${NORMAL} \W$(parse_git_branch) ${CYAN}❱${NORMAL} "
 }
 
-export PROMPT_COMMAND='ps1_function'
+export PROMPT_COMMAND='ps1_function;'
