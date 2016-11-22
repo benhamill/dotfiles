@@ -117,7 +117,7 @@ export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
-export EDITOR="vim"
+export EDITOR="nvim"
 
 if [[ $(which google-chrome-stable 2> /dev/null) ]]; then
   export BROWSER="google-chrome-stable"
