@@ -5,3 +5,6 @@
 tags-ja
 .~lock.*
 .projections.json
+.DS_Store
+.idea
+.ruby-version
