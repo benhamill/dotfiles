@@ -4,7 +4,7 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'altercation/vim-colors-solarized'
 Plug 'duff/vim-bufonly'
 Plug 'elixir-lang/vim-elixir'
-Plug 'epmatsw/ag.vim'
+Plug 'jremmen/vim-ripgrep'
 Plug 'godlygeek/tabular'
 Plug 'hwasungmars/avro-vim'
 Plug 'honza/vim-snippets'
