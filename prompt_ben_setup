@@ -1,0 +1,61 @@
+#!/bin/zsh
+#
+# A custom prompt that ambiently shows git commit status and editor mode with a
+# big magenta dot at the front for easy scanning up when you have a lot of
+# output and pretty minimal otherwise.
+#
+# Authors:
+#   Ben Hamill <ben@benhamill.com>
+
+function +vi-git_status {
+  # Check for untracked files or updated submodules since vcs_info does not.
+  if [[ -n $(git ls-files --other --exclude-standard 2> /dev/null) ]]; then
+    hook_com[unstaged]='%F{red}'
+  fi
+
+  git_status=$(command git status 2> /dev/null)
+
+  if [[ $git_status =~ "Your branch is ahead" ]]; then
+    hook_com[branch]="${hook_com[branch_orig]}%F{green} ✔"
+  elif [[ $git_status =~ "Your branch is behind" ]]; then
+    hook_com[branch]="${hook_com[branch_orig]}%F{yellow} ⚡"
+  elif [[ $git_status =~ "have diverged" ]]; then
+    hook_com[branch]="${hook_com[branch_orig]}%F{red} ✘"
+  fi
+}
+
+function prompt_ben_precmd {
+  vcs_info
+}
+
+function prompt_ben_setup {
+  setopt LOCAL_OPTIONS
+  unsetopt XTRACE KSH_ARRAYS
+  prompt_opts=(cr percent sp subst)
+
+  # Load required functions.
+  autoload -Uz add-zsh-hook
+  autoload -Uz vcs_info
+
+  # Add hook for calling vcs_info before each command.
+  add-zsh-hook precmd prompt_ben_precmd
+
+  # Set input mode parameters.
+  zstyle ':prezto:module:editor:info:completing' format '…'
+  zstyle ':prezto:module:editor:info:keymap:primary' format '%F{cyan}'
+  zstyle ':prezto:module:editor:info:keymap:alternate' format '%F{green}'
+
+  # Set vcs_info parameters.
+  zstyle ':vcs_info:*' enable git
+  zstyle ':vcs_info:*' check-for-changes true
+  zstyle ':vcs_info:*' stagedstr '%F{yellow}'
+  zstyle ':vcs_info:*' unstagedstr '%F{red}'
+  zstyle ':vcs_info:*' formats ' %F{green}%u%c%b%f'
+  zstyle ':vcs_info:git*+set-message:*' hooks git_status
+
+  # Define prompts.
+  PROMPT='%F{magenta}●%f %1~${vcs_info_msg_0_} %(?..%F{red}%?)${editor_info[keymap]}❱%f '
+  RPROMPT=''
+}
+
+prompt_ben_setup "$@"
