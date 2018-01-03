@@ -13,11 +13,13 @@
   excludesfile = ~/.gitignore
   autocrlf = input
   attributesfile = ~/.gitattributes
+  pager = diff-so-fancy | less --tabs=4 -RFX
 [branch]
   autosetuprebase = always
 [color]
   diff = true
   status = true
+  ui = true
 [merge]
   tool = vimdiff
 [pull]
