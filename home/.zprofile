@@ -61,3 +61,17 @@ export LESS='-F -g -i -M -R -S -w -X -z-4'
 if (( $#commands[(i)lesspipe(|.sh)] )); then
   export LESSOPEN="| /usr/bin/env $commands[(i)lesspipe(|.sh)] %s 2>&-"
 fi
+
+gfb () {
+  branch=`git symbolic-ref HEAD | cut -d'/' -f3-`
+
+  git checkout master && git pull --prune
+
+  if [[ -z `git branch --no-merged master | grep $branch` ]]; then
+    git branch -d $branch
+  else
+    echo "Hey, man, $branch isn't merged yet!"
+    git checkout $branch
+    return 1
+  fi
+}
