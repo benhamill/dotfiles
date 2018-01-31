@@ -21,6 +21,7 @@ Plug 'tomtom/tcomment_vim'
 Plug 'Townk/vim-autoclose'
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-surround'
+Plug 'fatih/vim-go', { 'tag': '*', 'for': 'go' }
 
 call plug#end()
 
@@ -125,57 +126,6 @@ nmap <silent> <leader>t :CtrlP<cr>
 " Avro support
 autocmd BufNewFile,BufRead *.avsc set filetype=json
 autocmd BufNewFile,BufRead *.avdl setlocal tabstop=4 shiftwidth=4
-
-" Python formatting
-function! PythonFormat()
-  if !executable("yapf")
-    echoerr "Couldn't run `yapf`. Are you sure it's installed?"
-    return
-  endif
-
-  if !executable("isort")
-    echoerr "Couldn't run `isort`. Are you sure it's installed?"
-    return
-  endif
-
-  " Save cursor position.
-  let current_cursor = getpos('.')
-
-  silent execute "0,$!yapf --style ./.yapfrc"
-
-  " Restore cursor.
-  call setpos('.', current_cursor)
-
-  " Yapf failed, spit out error text into a new buffer.
-  if v:shell_error == 1
-    execute 'normal! gg"ayG'
-    silent undo
-    " execute 'normal!' . current_line . 'G'
-    call setpos('.', current_cursor)
-    silent new
-    silent put a
-
-    return
-  endif
-
-  silent execute "0,$!isort -"
-
-  " Restore cursor.
-  call setpos('.', current_cursor)
-
-  " Isort failed, spit out error text into a new buffer.
-  if v:shell_error != 0
-    execute 'normal! gg"ayG'
-    silent undo
-    " execute 'normal!' . current_line . 'G'
-    call setpos('.', current_cursor)
-    silent new
-    silent put a
-
-    return
-  endif
-endfunction
-" autocmd BufWritePre *.py call PythonFormat()
 
 " Go support
 autocmd BufNewFile,BufRead *.go setlocal noexpandtab sw=4
