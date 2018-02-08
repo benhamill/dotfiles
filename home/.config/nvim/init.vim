@@ -128,6 +128,6 @@ autocmd BufNewFile,BufRead *.avsc set filetype=json
 autocmd BufNewFile,BufRead *.avdl setlocal tabstop=4 shiftwidth=4
 
 " Go support
-autocmd BufNewFile,BufRead *.go setlocal noexpandtab sw=4
+autocmd BufNewFile,BufRead *.go setlocal noexpandtab ts=2 listchars=tab:\ \ ,trail:•
 " My preferred default tab settings (makes tabs stand out)
 " set ts=4 sts=2 sw=2 expandtab
