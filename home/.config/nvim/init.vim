@@ -119,7 +119,7 @@ let NERDTreeSortOrder=['*', '^[A-Z]', '^README*', '^Gemfile']
 " CtrlP settings
 let g:ctrlp_map = ''
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'dir':  '\v[\/](\.(git|hg|svn)|pkg)$',
   \ }
 nmap <silent> <leader>t :CtrlP<cr>
 
