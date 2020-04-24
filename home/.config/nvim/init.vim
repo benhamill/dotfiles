@@ -6,7 +6,6 @@ Plug 'duff/vim-bufonly'
 Plug 'elixir-lang/vim-elixir'
 Plug 'jremmen/vim-ripgrep'
 Plug 'godlygeek/tabular'
-Plug 'hwasungmars/avro-vim'
 Plug 'honza/vim-snippets'
 Plug 'IN3D/vim-raml'
 Plug 'kien/ctrlp.vim'
@@ -22,9 +21,12 @@ Plug 'Townk/vim-autoclose'
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-surround'
 Plug 'fatih/vim-go', { 'tag': '*', 'for': 'go' }
+Plug 'jparise/vim-graphql'
 
 call plug#end()
 
+" To avoid remote code execution problems.
+set nomodeline
 
 set number nowrap nohlsearch noswapfile
 
@@ -32,7 +34,7 @@ set number nowrap nohlsearch noswapfile
 set visualbell
 
 " My preferred default tab settings (makes tabs stand out)
-set ts=4 sts=2 sw=2 expandtab
+set tabstop=4 softtabstop=2 shiftwidth=2 expandtab
 
 " Set windows up
 set winwidth=85 colorcolumn=81 list listchars=tab:▸\ ,trail:•
@@ -128,6 +130,11 @@ autocmd BufNewFile,BufRead *.avsc set filetype=json
 autocmd BufNewFile,BufRead *.avdl setlocal tabstop=4 shiftwidth=4
 
 " Go support
-autocmd BufNewFile,BufRead *.go setlocal noexpandtab ts=2 listchars=tab:\ \ ,trail:•
+autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=2 listchars=tab:\ \ ,trail:•
+
+" Tabs in JS
+autocmd BufNewFile,BufRead *.js setlocal noexpandtab shiftwidth=4 tabstop=4 listchars=tab:\ \ ,trail:•
+autocmd BufNewFile,BufRead *.jsx setlocal noexpandtab shiftwidth=4 tabstop=4 listchars=tab:\ \ ,trail:•
+
 " My preferred default tab settings (makes tabs stand out)
 " set ts=4 sts=2 sw=2 expandtab
