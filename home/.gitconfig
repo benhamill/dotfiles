@@ -27,8 +27,5 @@
   default = current
 [push]
   default = current
-[github]
-  user = benhamill
-  token = $GITHUB_TOKEN ; Set in ~/.bashrc.local
 [tag]
   sort = version:refname
