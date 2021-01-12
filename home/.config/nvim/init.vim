@@ -93,7 +93,9 @@ command! Sterminal :sp<bar>:terminal
 
 " Deoplete settings
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_smart_case = 1
+call deoplete#custom#option({
+  \ 'smart_case': v:true,
+\})
 
 " Elixir.nvim settings
 let g:elixir_comp_minlen = 2
@@ -112,6 +114,9 @@ autocmd BufNewFile,BufReadPost *.md setlocal textwidth=80
 autocmd BufNewFile,BufReadPost *.markdown set filetype=markdown
 autocmd BufNewFile,BufReadPost *.markdown setlocal textwidth=80
 let g:markdown_fenced_languages = ['ruby', 'sh', 'javascript', 'vim', 'python', 'go', 'elixir']
+
+" Dot/Graphviz support
+autocmd BufWritePost *.dot silent !command dot -Tpng -o<afile>.png <afile>
 
 " NERDTree settings
 nmap <silent> <leader>nt :NERDTreeToggle<cr>

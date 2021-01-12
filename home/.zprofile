@@ -75,3 +75,5 @@ gfb () {
     return 1
   fi
 }
+
+eval "$(rbenv init -)"
