@@ -116,7 +116,7 @@ autocmd BufNewFile,BufReadPost *.markdown setlocal textwidth=80
 let g:markdown_fenced_languages = ['ruby', 'sh', 'javascript', 'vim', 'python', 'go', 'elixir']
 
 " Dot/Graphviz support
-autocmd BufWritePost *.dot silent !command dot -Tpng -o<afile>.png <afile>
+autocmd BufWritePost *.dot silent !command dot -Tsvg -o<afile>.svg <afile>
 
 " NERDTree settings
 nmap <silent> <leader>nt :NERDTreeToggle<cr>
