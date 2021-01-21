@@ -111,8 +111,10 @@ let g:neopairs#enable = 1
 " Markdown support
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd BufNewFile,BufReadPost *.md setlocal textwidth=80
+autocmd BufNewFile,BufReadPost *.md setlocal spell spelllang=en_us
 autocmd BufNewFile,BufReadPost *.markdown set filetype=markdown
 autocmd BufNewFile,BufReadPost *.markdown setlocal textwidth=80
+autocmd BufNewFile,BufReadPost *.markdown setlocal spell spelllang=en_us
 let g:markdown_fenced_languages = ['ruby', 'sh', 'javascript', 'vim', 'python', 'go', 'elixir']
 
 " Dot/Graphviz support
