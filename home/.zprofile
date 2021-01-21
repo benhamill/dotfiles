@@ -65,9 +65,9 @@ fi
 gfb () {
   branch=`git symbolic-ref HEAD | cut -d'/' -f3-`
 
-  git checkout master && git pull --prune
+  git checkout main && git pull --prune
 
-  if [[ -z `git branch --no-merged master | grep $branch` ]]; then
+  if [[ -z `git branch --no-merged main | grep $branch` ]]; then
     git branch -d $branch
   else
     echo "Hey, man, $branch isn't merged yet!"
