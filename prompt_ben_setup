@@ -4,6 +4,9 @@
 # big magenta dot at the front for easy scanning up when you have a lot of
 # output and pretty minimal otherwise.
 #
+# To install:
+#   ln -s ~/.homesick/repos/dotfiles/prompt_ben_setup ~/.zprezto/modules/prompt/functions/prompt_ben_setup
+#
 # Authors:
 #   Ben Hamill <ben@benhamill.com>
 
@@ -39,6 +42,9 @@ function prompt_ben_setup {
 
   # Add hook for calling vcs_info before each command.
   add-zsh-hook precmd prompt_ben_precmd
+
+  # Tell prezto we can manage this prompt
+  zstyle ':prezto:module:prompt' managed 'yes'
 
   # Set input mode parameters.
   zstyle ':prezto:module:editor:info:completing' format '…'

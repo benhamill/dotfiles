@@ -22,6 +22,13 @@ export VISUAL='nvim'
 export PAGER='less'
 
 #
+# Display
+#
+# To make neovim find xclip on Linux
+
+export DISPLAY=1
+
+#
 # Language
 #
 
@@ -44,6 +51,7 @@ typeset -gU cdpath fpath mailpath path
 # Set the list of directories that Zsh searches for programs.
 path=(
   /usr/local/{bin,sbin}
+  $HOME/.rbenv/bin
   $path
 )
 
@@ -65,9 +73,9 @@ fi
 gfb () {
   branch=`git symbolic-ref HEAD | cut -d'/' -f3-`
 
-  git checkout master && git pull --prune
+  git checkout main && git pull --prune
 
-  if [[ -z `git branch --no-merged master | grep $branch` ]]; then
+  if [[ -z `git branch --no-merged main | grep $branch` ]]; then
     git branch -d $branch
   else
     echo "Hey, man, $branch isn't merged yet!"
@@ -75,3 +83,5 @@ gfb () {
     return 1
   fi
 }
+
+eval "$(rbenv init -)"

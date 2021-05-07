@@ -6,7 +6,6 @@ Plug 'duff/vim-bufonly'
 Plug 'elixir-lang/vim-elixir'
 Plug 'jremmen/vim-ripgrep'
 Plug 'godlygeek/tabular'
-Plug 'hwasungmars/avro-vim'
 Plug 'honza/vim-snippets'
 Plug 'IN3D/vim-raml'
 Plug 'kien/ctrlp.vim'
@@ -22,9 +21,12 @@ Plug 'Townk/vim-autoclose'
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-surround'
 Plug 'fatih/vim-go', { 'tag': '*', 'for': 'go' }
+Plug 'jparise/vim-graphql'
 
 call plug#end()
 
+" To avoid remote code execution problems.
+set nomodeline
 
 set number nowrap nohlsearch noswapfile
 
@@ -32,7 +34,7 @@ set number nowrap nohlsearch noswapfile
 set visualbell
 
 " My preferred default tab settings (makes tabs stand out)
-set ts=4 sts=2 sw=2 expandtab
+set tabstop=4 softtabstop=2 shiftwidth=2 expandtab
 
 " Set windows up
 set winwidth=85 colorcolumn=81 list listchars=tab:▸\ ,trail:•
@@ -91,7 +93,9 @@ command! Sterminal :sp<bar>:terminal
 
 " Deoplete settings
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_smart_case = 1
+call deoplete#custom#option({
+  \ 'smart_case': v:true,
+\})
 
 " Elixir.nvim settings
 let g:elixir_comp_minlen = 2
@@ -107,9 +111,14 @@ let g:neopairs#enable = 1
 " Markdown support
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd BufNewFile,BufReadPost *.md setlocal textwidth=80
+autocmd BufNewFile,BufReadPost *.md setlocal spell spelllang=en_us
 autocmd BufNewFile,BufReadPost *.markdown set filetype=markdown
 autocmd BufNewFile,BufReadPost *.markdown setlocal textwidth=80
+autocmd BufNewFile,BufReadPost *.markdown setlocal spell spelllang=en_us
 let g:markdown_fenced_languages = ['ruby', 'sh', 'javascript', 'vim', 'python', 'go', 'elixir']
+
+" Dot/Graphviz support
+autocmd BufWritePost *.dot silent !command dot -Tsvg -o<afile>.svg <afile>
 
 " NERDTree settings
 nmap <silent> <leader>nt :NERDTreeToggle<cr>
@@ -128,6 +137,11 @@ autocmd BufNewFile,BufRead *.avsc set filetype=json
 autocmd BufNewFile,BufRead *.avdl setlocal tabstop=4 shiftwidth=4
 
 " Go support
-autocmd BufNewFile,BufRead *.go setlocal noexpandtab ts=2 listchars=tab:\ \ ,trail:•
+autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=2 listchars=tab:\ \ ,trail:•
+
+" Tabs in JS
+autocmd BufNewFile,BufRead *.js setlocal noexpandtab shiftwidth=4 tabstop=4 listchars=tab:\ \ ,trail:•
+autocmd BufNewFile,BufRead *.jsx setlocal noexpandtab shiftwidth=4 tabstop=4 listchars=tab:\ \ ,trail:•
+
 " My preferred default tab settings (makes tabs stand out)
 " set ts=4 sts=2 sw=2 expandtab
