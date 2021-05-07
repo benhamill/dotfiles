@@ -22,13 +22,6 @@ export VISUAL='nvim'
 export PAGER='less'
 
 #
-# Display
-#
-# To make neovim find xclip on Linux
-
-export DISPLAY=1
-
-#
 # Language
 #
 
