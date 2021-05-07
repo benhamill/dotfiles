@@ -29,3 +29,5 @@
   default = current
 [tag]
   sort = version:refname
+[init]
+	defaultBranch = main
