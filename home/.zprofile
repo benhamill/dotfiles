@@ -22,6 +22,13 @@ export VISUAL='nvim'
 export PAGER='less'
 
 #
+# Display
+#
+# To make neovim find xclip on Linux
+
+export DISPLAY=1
+
+#
 # Language
 #
 
@@ -44,6 +51,7 @@ typeset -gU cdpath fpath mailpath path
 # Set the list of directories that Zsh searches for programs.
 path=(
   /usr/local/{bin,sbin}
+  $HOME/.rbenv/bin
   $path
 )
 

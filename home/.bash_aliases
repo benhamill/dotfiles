@@ -41,10 +41,6 @@ function elixir_projection() {
   ~/.bash/elixir_projection $*
 }
 
-function iwill() {
-  ~/.bash/iwill $*
-}
-
 function pair_term() {
   echo "XTerm*FaceSize: 13" | xrdb -merge -
 }
