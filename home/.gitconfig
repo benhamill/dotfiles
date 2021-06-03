@@ -30,4 +30,4 @@
 [tag]
   sort = version:refname
 [init]
-	defaultBranch = main
+  defaultBranch = main
