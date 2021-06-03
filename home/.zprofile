@@ -63,6 +63,7 @@ if (( $#commands[(i)lesspipe(|.sh)] )); then
   export LESSOPEN="| /usr/bin/env $commands[(i)lesspipe(|.sh)] %s 2>&-"
 fi
 
+# Git finish branch.
 gfb () {
   branch=`git symbolic-ref HEAD | cut -d'/' -f3-`
 
@@ -75,6 +76,12 @@ gfb () {
     git checkout $branch
     return 1
   fi
+}
+
+# AWS CLI multi-factor authentication helper.
+export AWS_MFA_ARN='arn:aws:iam::813448775391:mfa/ben.hamill'
+aws-mfa() {
+    eval $(aws --output=text sts get-session-token --serial-number ${AWS_MFA_ARN} --token-code ${1} | awk '{print "export AWS_ACCESS_KEY_ID="$2" AWS_SECRET_ACCESS_KEY="$4" AWS_SESSION_TOKEN="$5}')
 }
 
 eval "$(rbenv init -)"
