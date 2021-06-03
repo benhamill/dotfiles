@@ -145,3 +145,18 @@ autocmd BufNewFile,BufRead *.jsx setlocal noexpandtab shiftwidth=4 tabstop=4 lis
 
 " My preferred default tab settings (makes tabs stand out)
 " set ts=4 sts=2 sw=2 expandtab
+
+" Enable clipbiard on WSL
+set clipboard+=unnamedplus
+let g:clipboard = {
+  \   'name': 'win32yank-wsl',
+  \   'copy': {
+  \      '+': 'win32yank.exe -i --crlf',
+  \      '*': 'win32yank.exe -i --crlf',
+  \    },
+  \   'paste': {
+  \      '+': 'win32yank.exe -o --lf',
+  \      '*': 'win32yank.exe -o --lf',
+  \   },
+  \   'cache_enabled': 0,
+  \ }
