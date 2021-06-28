@@ -9,7 +9,7 @@ Plug 'godlygeek/tabular'
 Plug 'honza/vim-snippets'
 Plug 'IN3D/vim-raml'
 Plug 'kien/ctrlp.vim'
-Plug 'mrk21/yaml-vim' " For highlighting the | and > of strings and - for lists.
+" Plug 'mrk21/yaml-vim' " For highlighting the | and > of strings and - for lists.
 Plug 'powerman/vim-plugin-AnsiEsc'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'SirVer/ultisnips'
@@ -142,6 +142,9 @@ autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=2 listchars=tab:\ \
 " Tabs in JS
 autocmd BufNewFile,BufRead *.js setlocal noexpandtab shiftwidth=4 tabstop=4 listchars=tab:\ \ ,trail:•
 autocmd BufNewFile,BufRead *.jsx setlocal noexpandtab shiftwidth=4 tabstop=4 listchars=tab:\ \ ,trail:•
+
+" 4 spaces for Lua
+autocmd BufNewFile,BufRead *.lua setlocal shiftwidth=4 softtabstop=4
 
 " My preferred default tab settings (makes tabs stand out)
 " set ts=4 sts=2 sw=2 expandtab
