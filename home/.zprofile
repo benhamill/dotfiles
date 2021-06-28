@@ -69,8 +69,8 @@ gfb () {
 
   git checkout main && git pull --prune
 
-  if [[ -z `git branch --no-merged main | grep $branch` ]]; then
-    git branch -d $branch
+  if [[ $1 == '--force' || -z `git branch --no-merged main | grep $branch` ]]; then
+    git branch -D $branch
   else
     echo "Hey, man, $branch isn't merged yet!"
     git checkout $branch
@@ -84,4 +84,7 @@ aws-mfa() {
     eval $(aws --output=text sts get-session-token --serial-number ${AWS_MFA_ARN} --token-code ${1} | awk '{print "export AWS_ACCESS_KEY_ID="$2" AWS_SECRET_ACCESS_KEY="$4" AWS_SESSION_TOKEN="$5}')
 }
 
-eval "$(rbenv init -)"
+[[ $commands[rbenv] ]] && eval "$(rbenv init -)"
+
+# Kubernetes completions
+[[ $commands[kubectl] ]] && source <(kubectl completion zsh)
