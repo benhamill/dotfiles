@@ -1,8 +1,8 @@
 " Install plugins with https://github.com/junegunn/vim-plug
 call plug#begin('~/.config/nvim/plugged')
 
-Plug 'altercation/vim-colors-solarized'
 Plug 'duff/vim-bufonly'
+Plug 'ekalinin/Dockerfile.vim'
 Plug 'elixir-lang/vim-elixir'
 Plug 'jremmen/vim-ripgrep'
 Plug 'godlygeek/tabular'
@@ -22,6 +22,11 @@ Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-surround'
 Plug 'fatih/vim-go', { 'tag': '*', 'for': 'go' }
 Plug 'jparise/vim-graphql'
+
+" Colors
+Plug 'altercation/vim-colors-solarized'
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'sonph/onehalf', { 'rtp': 'vim' }
 
 call plug#end()
 
@@ -45,7 +50,7 @@ set wildmode=longest:full
 
 " Colors
 set background=dark
-colorscheme solarized
+colorscheme dracula
 
 " VERY MAGIC ALL THE TIME!
 nnoremap /  /\v
@@ -71,6 +76,8 @@ nmap <silent> <S-tab> :bp<cr>
 nmap <silent> <C-n> :cn<cr>
 nmap <silent> <C-p> :cp<cr>
 
+" Block visual when ctrl-v is stolen by the OS.
+nmap <M-v> <C-v>
 
 " Easier window nav
 nmap <C-h> <C-w>h
@@ -90,6 +97,21 @@ command! Vterminal :vs<bar>:terminal
 " Open terminal in split
 command! Sterminal :sp<bar>:terminal
 
+" Trim trailing whitespace on command
+command! TW :call <SID>StripTrailingWhitespaces()
+
+function! <SID>StripTrailingWhitespaces()
+  " Preparation: save last search, and cursor position.
+  let _s=@/
+  let l = line(".")
+  let c = col(".")
+  " Do the business:
+  %s/\s\+$//e
+  " Clean up: restore previous search history, and cursor position
+  let @/=_s
+  call cursor(l, c)
+endfunction
+
 
 " Deoplete settings
 let g:deoplete#enable_at_startup = 1
@@ -99,6 +121,8 @@ call deoplete#custom#option({
 
 " Elixir.nvim settings
 let g:elixir_comp_minlen = 2
+autocmd BufNewFile,BufReadPost *.ex set filetype=elixir
+autocmd BufNewFile,BufReadPost *.exs set filetype=elixir
 
 " UltiSnips settings
 let g:UltiSnipsEditSplit = 'context'
@@ -110,10 +134,28 @@ let g:neopairs#enable = 1
 
 " Markdown support
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-autocmd BufNewFile,BufReadPost *.md setlocal textwidth=80
+" autocmd BufNewFile,BufReadPost *.md setlocal textwidth=80
+autocmd BufNewFile,BufReadPost *.md setlocal wrap linebreak nolist
+autocmd BufNewFile,BufReadPost *.md nmap <buffer> j gj
+autocmd BufNewFile,BufReadPost *.md nmap <buffer> k gk
+autocmd BufNewFile,BufReadPost *.md vmap <buffer> j gj
+autocmd BufNewFile,BufReadPost *.md vmap <buffer> k gk
 autocmd BufNewFile,BufReadPost *.md setlocal spell spelllang=en_us
+autocmd BufNewFile,BufReadPost *.mdx set filetype=markdown
+" autocmd BufNewFile,BufReadPost *.mdx setlocal textwidth=80
+autocmd BufNewFile,BufReadPost *.mdx setlocal wrap linebreak nolist
+autocmd BufNewFile,BufReadPost *.mdx nmap <buffer> j gj
+autocmd BufNewFile,BufReadPost *.mdx nmap <buffer> k gk
+autocmd BufNewFile,BufReadPost *.mdx vmap <buffer> j gj
+autocmd BufNewFile,BufReadPost *.mdx vmap <buffer> k gk
+autocmd BufNewFile,BufReadPost *.mdx setlocal spell spelllang=en_us
 autocmd BufNewFile,BufReadPost *.markdown set filetype=markdown
-autocmd BufNewFile,BufReadPost *.markdown setlocal textwidth=80
+" autocmd BufNewFile,BufReadPost *.markdown setlocal textwidth=80
+autocmd BufNewFile,BufReadPost *.markdown setlocal wrap linebreak nolist
+autocmd BufNewFile,BufReadPost *.markdown nmap <buffer> j gj
+autocmd BufNewFile,BufReadPost *.markdown nmap <buffer> k gk
+autocmd BufNewFile,BufReadPost *.markdown vmap <buffer> j gj
+autocmd BufNewFile,BufReadPost *.markdown vmap <buffer> k gk
 autocmd BufNewFile,BufReadPost *.markdown setlocal spell spelllang=en_us
 let g:markdown_fenced_languages = ['ruby', 'sh', 'javascript', 'vim', 'python', 'go', 'elixir']
 
@@ -142,9 +184,6 @@ autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=2 listchars=tab:\ \
 " Tabs in JS
 autocmd BufNewFile,BufRead *.js setlocal noexpandtab shiftwidth=4 tabstop=4 listchars=tab:\ \ ,trail:•
 autocmd BufNewFile,BufRead *.jsx setlocal noexpandtab shiftwidth=4 tabstop=4 listchars=tab:\ \ ,trail:•
-
-" 4 spaces for Lua
-autocmd BufNewFile,BufRead *.lua setlocal shiftwidth=4 softtabstop=4
 
 " My preferred default tab settings (makes tabs stand out)
 " set ts=4 sts=2 sw=2 expandtab

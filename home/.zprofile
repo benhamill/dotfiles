@@ -6,6 +6,11 @@
 #
 
 #
+# ASDF, apparently, ugh
+#
+. "$HOME/.asdf/asdf.sh"
+
+#
 # Browser
 #
 
@@ -48,6 +53,14 @@ path=(
   $path
 )
 
+# Completions
+fpath=(
+  ${ASDF_DIR}/completions
+  $fpath
+)
+
+autoload -Uz compinit && compinit
+
 #
 # Less
 #
@@ -72,7 +85,8 @@ gfb () {
   if [[ $1 == '--force' || -z `git branch --no-merged main | grep $branch` ]]; then
     git branch -D $branch
   else
-    echo "Hey, man, $branch isn't merged yet!"
+    echo "Hey, man, $branch isn't merged yet! Here's the log:"
+    git log -n10 --pretty=format:'%C(yellow)%h%C(reset) %C(blue)%an%C(reset) %C(green)(%cr)%C(reset) -%C(bold blue)%d%C(reset) %s'
     git checkout $branch
     return 1
   fi
@@ -84,7 +98,17 @@ aws-mfa() {
     eval $(aws --output=text sts get-session-token --serial-number ${AWS_MFA_ARN} --token-code ${1} | awk '{print "export AWS_ACCESS_KEY_ID="$2" AWS_SECRET_ACCESS_KEY="$4" AWS_SESSION_TOKEN="$5}')
 }
 
-[[ $commands[rbenv] ]] && eval "$(rbenv init -)"
+aws-eu() {
+    OUT=$(aws sts assume-role --role-arn "arn:aws:iam::817233170649:role/OrganizationAccountAccessRole" --role-session-name session)
+    export AWS_ACCESS_KEY_ID=$(echo $OUT | jq -r '.Credentials.AccessKeyId')
+    export AWS_SECRET_ACCESS_KEY=$(echo $OUT | jq -r '.Credentials.SecretAccessKey')
+    export AWS_SESSION_TOKEN=$(echo $OUT | jq -r '.Credentials.SessionToken')
+}
 
-# Kubernetes completions
-[[ $commands[kubectl] ]] && source <(kubectl completion zsh)
+# Convert ISO 8601 dates to Linux Timestamp
+discord-timestamp () {
+    date -d "${1}" +%s
+}
+
+[[ $commands[rbenv] ]] && eval "$(rbenv init -)"
+[[ $commands[asdf] ]] && 
