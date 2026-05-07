@@ -110,4 +110,4 @@ discord-timestamp () {
     date -d "${1}" +%s
 }
 
-eval "$(/home/ben/.local/bin/mise activate zsh)"
+eval "$($HOME/.local/bin/mise activate zsh)"
