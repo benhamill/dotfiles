@@ -21,5 +21,6 @@
     ]
   },
   "model": "opusplan",
+  "theme": "auto",
   "editorMode": "vim"
 }
