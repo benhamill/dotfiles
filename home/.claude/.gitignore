@@ -1,0 +1,34 @@
+# Credentials and auth
+.credentials.json
+config.json
+
+# Session and history
+history.jsonl
+sessions/
+session-env/
+shell-snapshots/
+
+# Caches
+cache/
+paste-cache/
+stats-cache.json
+file-history/
+backups/
+
+# Project-specific state
+projects/
+todos/
+plans/
+tasks/
+
+# Runtime and debug
+debug/
+downloads/
+ide/
+agents/
+
+# Installed plugins (manage separately)
+plugins/
+
+# Analytics
+statsig/

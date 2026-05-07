@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "awsAuthRefresh": "aws sso login",
+  "env": {
+    "AWS_PROFILE": "claude-access",
+    "AWS_REGION": "us-east-1",
+    "CLAUDE_CODE_USE_BEDROCK": "1"
+  },
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "Skill(commit)",
+      "mcp__atlassian_confluence__searchConfluenceUsingCql",
+      "mcp__atlassian_confluence__getConfluencePage",
+      "Bash(gh api *)",
+      "Bash(gh pr view:*)",
+      "Bash(gh pr diff:*)",
+      "Bash(gh run watch *)",
+      "Bash(gh run view *)",
+      "Bash(gh repo view *)"
+    ]
+  },
+  "model": "opusplan",
+  "editorMode": "vim"
+}

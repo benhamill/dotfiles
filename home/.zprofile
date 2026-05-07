@@ -5,10 +5,6 @@
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
 
-#
-# ASDF, apparently, ugh
-#
-. "$HOME/.asdf/asdf.sh"
 
 #
 # Browser
@@ -16,6 +12,8 @@
 
 if [[ "$OSTYPE" == darwin* ]]; then
   export BROWSER='open'
+else
+  export BROWSER='win-firefox'
 fi
 
 #
@@ -49,13 +47,12 @@ typeset -gU cdpath fpath mailpath path
 # Set the list of directories that Zsh searches for programs.
 path=(
   /usr/local/{bin,sbin}
-  $HOME/.rbenv/bin
+  $HOME/.local/bin
   $path
 )
 
 # Completions
 fpath=(
-  ${ASDF_DIR}/completions
   $fpath
 )
 
@@ -105,10 +102,12 @@ aws-eu() {
     export AWS_SESSION_TOKEN=$(echo $OUT | jq -r '.Credentials.SessionToken')
 }
 
+# Token for gh CLI
+export GH_TOKEN="REPLACEME"
+
 # Convert ISO 8601 dates to Linux Timestamp
 discord-timestamp () {
     date -d "${1}" +%s
 }
 
-[[ $commands[rbenv] ]] && eval "$(rbenv init -)"
-[[ $commands[asdf] ]] && 
+eval "$(/home/ben/.local/bin/mise activate zsh)"

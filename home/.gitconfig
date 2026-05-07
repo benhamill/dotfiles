@@ -1,5 +1,6 @@
 [user]
   name = Ben Hamill
+  useConfigOnly = true
 [alias]
   st = status
   co = checkout
@@ -26,7 +27,13 @@
   default = current
 [push]
   default = current
+  autoSetupRemote = true
 [tag]
   sort = version:refname
 [init]
   defaultBranch = main
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
