@@ -1,0 +1,5 @@
+[tools]
+node = "25"
+
+[settings]
+idiomatic_version_file_enable_tools = ["node"]

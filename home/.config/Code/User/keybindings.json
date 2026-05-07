@@ -1,0 +1,16 @@
+// Place your key bindings in this file to override the defaults
+[
+  {
+    "key": "shift+enter",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": {
+      "text": "\u001b\n" // ESC (0x1b) followed by LF
+    },
+    "when": "terminalFocus"
+  },
+  {
+      "key": "ctrl+v",
+      "command": "workbench.action.terminal.paste",
+      "when": "terminalFocus && terminalShellType == 'pwsh' || terminalFocus && terminalShellType == 'powershell'"
+  },
+]

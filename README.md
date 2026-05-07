@@ -6,21 +6,20 @@ super basic
 `.vimrc`](http://vimuniversity.com/samples/your-first-vimrc-should-be-nearly-empty).
 
 The repo is structured to play nicely with
-[homesick](http://rubygems.org/gems/homesick).
+[homessick](https://github.com/andsens/homeshick).
 
 ## Homesicking It Up
 
 First time:
 
 ```
-gem install homesick
-homesick clone benhamill/dotfiles
+homeshick clone benhamill/dotfiles
 ```
 
 To symlink new files:
 
 ```
-homesick symlink dotfiles
+homeshick symlink dotfiles
 ```
 
 ## License

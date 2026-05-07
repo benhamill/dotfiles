@@ -1,0 +1,78 @@
+{
+    "workbench.colorTheme": "Solarized Dark",
+    "workbench.startupEditor": "none",
+    "roo-cline.allowedCommands": [
+        "npm test",
+        "npm install",
+        "tsc",
+        "git log",
+        "git diff",
+        "git show"
+    ],
+    "security.allowedUNCHosts": [
+        "wsl$"
+    ],
+    "csharp.inlayHints.enableInlayHintsForImplicitObjectCreation": true,
+    "csharp.inlayHints.enableInlayHintsForImplicitVariableTypes": true,
+    "csharp.inlayHints.enableInlayHintsForLambdaParameterTypes": true,
+    "csharp.inlayHints.enableInlayHintsForTypes": true,
+    "dotnet.inlayHints.enableInlayHintsForIndexerParameters": true,
+    "dotnet.inlayHints.enableInlayHintsForLiteralParameters": true,
+    "dotnet.inlayHints.enableInlayHintsForObjectCreationParameters": true,
+    "dotnet.inlayHints.enableInlayHintsForOtherParameters": true,
+    "dotnet.inlayHints.enableInlayHintsForParameters": true,
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
+    "files.trimFinalNewlines": true,
+    "editor.rulers": [
+        80,
+    ],
+    "terminal.integrated.fontSize": 16,
+    "vim.enableNeovim": true,
+    "vim.joinspaces": false,
+    "vim.leader": ",",
+    "vim.normalModeKeyBindings": [
+        {
+            "before": ["<leader>", "t"],
+            "commands": ["workbench.action.quickOpen"],
+        },
+    ],
+    "workbench.settings.openDefaultKeybindings": true,
+    "vim.neovimUseConfigFile": true,
+    "terminal.integrated.copyOnSelection": true,
+    "files.associations": {
+        "*.yaml.template": "yaml"
+    },
+    "editor.wordWrap": "off",
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "dotnet.formatting.organizeImportsOnFormat": true,
+    "dotnet.automaticallySyncWithActiveItem": true,
+    "terminal.integrated.confirmOnExit": "always",
+    "terminal.integrated.confirmOnKill": "always",
+    "git.blame.editorDecoration.enabled": false,
+    "git.blame.statusBarItem.enabled": true,
+    "editor.tabSize": 2,
+    "remote.autoForwardPortsSource": "hybrid",
+    "editor.accessibilitySupport": "off",
+    "claudeCode.useTerminal": true,
+    "diffEditor.renderSideBySide": false,
+    "claudeCode.preferredLocation": "panel",
+    "sops.configPath": "~/.sopsrc",
+    "sops.creationEnabled": true,
+    "terminal.integrated.defaultLocation": "editor",
+    "editor.fontFamily": "'Hack Nerd Font', Consolas, 'Courier New', monospace",
+    "editor.fontSize": 15,
+    "terminal.integrated.stickyScroll.enabled": false,
+    "terminal.integrated.commandsToSkipShell": [
+        "workbench.action.quickOpen"
+    ],
+    "terminal.integrated.allowedLinkSchemes": [
+        "file",
+        "http",
+        "https",
+        "mailto",
+        "vscode",
+        "vscode-insiders",
+        "docs/global-concepts.md"
+    ],
+}
