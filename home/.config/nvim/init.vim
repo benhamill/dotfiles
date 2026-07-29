@@ -60,9 +60,6 @@ cnoremap s/ s/\v
 " When editing a line, put a $, instead of redisplaying.
 set cpoptions+=$
 
-" Toggle paste mode
-set pastetoggle=<C-t>
-
 
 let mapleader = ","
 
