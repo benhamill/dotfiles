@@ -8,7 +8,7 @@ You are using Playwright for visual work. This might be verifying your own devel
 
 ## The Core Principle
 
-Screenshots are your primary tool. You're looking at things. When you need to know what something looks like, take a screenshot and look at it. Store scrrenshots in `/tmp` directory.
+Screenshots are your primary tool. You're looking at things. When you need to know what something looks like, take a screenshot and look at it.
 
 ## Snapshots: Sparingly and as a Last Resort
 

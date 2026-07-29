@@ -89,19 +89,6 @@ gfb () {
   fi
 }
 
-# AWS CLI multi-factor authentication helper.
-export AWS_MFA_ARN='arn:aws:iam::813448775391:mfa/ben.hamill'
-aws-mfa() {
-    eval $(aws --output=text sts get-session-token --serial-number ${AWS_MFA_ARN} --token-code ${1} | awk '{print "export AWS_ACCESS_KEY_ID="$2" AWS_SECRET_ACCESS_KEY="$4" AWS_SESSION_TOKEN="$5}')
-}
-
-aws-eu() {
-    OUT=$(aws sts assume-role --role-arn "arn:aws:iam::817233170649:role/OrganizationAccountAccessRole" --role-session-name session)
-    export AWS_ACCESS_KEY_ID=$(echo $OUT | jq -r '.Credentials.AccessKeyId')
-    export AWS_SECRET_ACCESS_KEY=$(echo $OUT | jq -r '.Credentials.SecretAccessKey')
-    export AWS_SESSION_TOKEN=$(echo $OUT | jq -r '.Credentials.SessionToken')
-}
-
 # Token for gh CLI
 export GH_TOKEN="REPLACEME"
 

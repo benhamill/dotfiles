@@ -1,10 +1,6 @@
 {
-  "$schema": "https://json.schemastore.org/claude-code-settings.json",
-  "awsAuthRefresh": "aws sso login",
   "env": {
-    "AWS_PROFILE": "claude-access",
-    "AWS_REGION": "us-east-1",
-    "CLAUDE_CODE_USE_BEDROCK": "1"
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "claude-sonnet-4-6"
   },
   "permissions": {
     "allow": [
@@ -12,6 +8,7 @@
       "Skill(commit)",
       "mcp__atlassian_confluence__searchConfluenceUsingCql",
       "mcp__atlassian_confluence__getConfluencePage",
+      "mcp__atlassian__getJiraIssue",
       "Bash(gh api *)",
       "Bash(gh pr view:*)",
       "Bash(gh pr diff:*)",
@@ -21,6 +18,5 @@
     ]
   },
   "model": "opusplan",
-  "theme": "auto",
   "editorMode": "vim"
 }
