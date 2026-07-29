@@ -75,4 +75,5 @@
         "vscode-insiders",
         "docs/global-concepts.md"
     ],
+    "terminal.integrated.enableKittyKeyboardProtocol": false,
 }
